@@ -95,12 +95,12 @@
                     <p>Feito diariamente com ingredientes selecionados.</p>
                 </div>
                 <div class="product-item">
-                    <img src="images/doce.jpg" alt="Doce Caseiro">
+                    <img src="images/doce.jpg" loading="lazy" alt="Doce Caseiro">
                     <h3>Doce Caseiro</h3>
                     <p>Deliciosos doces feitos com receitas tradicionais.</p>
                 </div>
                 <div class="product-item">
-                    <img src="images/salgado.jpg" alt="Salgado Assado">
+                    <img src="images/salgado.jpg" loading="lazy" alt="Salgado Assado">
                     <h3>Salgado Assado</h3>
                     <p>Perfeito para um lanche rápido e saboroso.</p>
                 </div>
@@ -136,6 +136,35 @@
             </ul>
         </section>
 
+        <!-- SEÇÃO HORÁRIOS DE FUNCIONAMENTO -->
+        <section id="horarios">
+            <h2>Horários de Funcionamento</h2>
+            <div class="horarios-container">
+                <div class="horarios-lista">
+                    <h3>Nossos Horários</h3>
+                    <ol>
+                        <li>Segunda a Sexta: 6h às 20h</li>
+                        <li>Sábado: 6h às 18h</li>
+                        <li>Domingo: 7h às 12h</li>
+                        <li>Feriados: 7h às 12h</li>
+                    </ol>
+                </div>
+
+                <div class="promocoes">
+                    <h3>Promoções da Semana</h3>
+                    <div class="promocao-item">
+                        <p>Às quartas-feiras, na compra de 3 pães franceses, ganhe 1!</p>
+                    </div>
+                    <div class="promocao-item">
+                        <p>Aos sábados, 10% de desconto em todos os bolos.</p>
+                    </div>
+                    <div class="promocao-item">
+                        <p>Happy Hour das 17h às 19h - Café com desconto de 20%!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- SEÇÃO LOCALIZAÇÃO -->
         <!-- Endereço, mapa e informações de contato -->
         <section id="localizacao">
@@ -169,35 +198,6 @@
             </form>
         </section>
 
-        <!-- SEÇÃO HORÁRIOS DE FUNCIONAMENTO -->
-        <section id="horarios">
-            <h2>Horários de Funcionamento</h2>
-            <div class="horarios-container">
-                <div class="horarios-lista">
-                    <h3>Nossos Horários</h3>
-                    <ol>
-                        <li>Segunda a Sexta: 6h às 20h</li>
-                        <li>Sábado: 6h às 18h</li>
-                        <li>Domingo: 7h às 12h</li>
-                        <li>Feriados: 7h às 12h</li>
-                    </ol>
-                </div>
-
-                <div class="promocoes">
-                    <h3>Promoções da Semana</h3>
-                    <div class="promocao-item">
-                        <p>Às quartas-feiras, na compra de 3 pães franceses, ganhe 1!</p>
-                    </div>
-                    <div class="promocao-item">
-                        <p>Aos sábados, 10% de desconto em todos os bolos.</p>
-                    </div>
-                    <div class="promocao-item">
-                        <p>Happy Hour das 17h às 19h - Café com desconto de 20%!</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- BOTÃO VOLTAR AO TOPO -->
         <a href="#" class="back-to-top" id="backToTop" aria-label="Voltar ao topo">↑</a>
     </main>
@@ -224,18 +224,6 @@
 
     <!-- Link para o arquivo JavaScript -->
     <script src="js/main.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const backToTop = document.getElementById('backToTop');
-            window.addEventListener('scroll', function () {
-                if (window.scrollY > 300) {
-                    backToTop.classList.add('visible');
-                } else {
-                    backToTop.classList.remove('visible');
-                }
-            });
-        });
-    </script>
 </body>
 
 </html>

@@ -38,7 +38,7 @@
     --fonte-corpo: 'Open Sans', Arial, sans-serif;
 }
 
-/* REMOVER a definição duplicada de dark mode no final do arquivo */
+/* Consolidar todas as regras de dark mode em um único bloco */
 @media (prefers-color-scheme: dark) {
     :root {
         --cor-primaria: #ffc554;
@@ -58,30 +58,6 @@
         --cor-link: #ffd166;
         /* Amarelo claro */
         --cor-box-shadow: rgba(0, 0, 0, 0.3);
-    }
-}
-
-/* Base para modo escuro - MELHORADO PARA LEGIBILIDADE */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --cor-primaria: #ffc554;
-        /* Dourado claro para melhor visibilidade */
-        --cor-secundaria: #e9a743;
-        /* Dourado mais escuro para destaques */
-        --cor-terciaria: #3d2e1e;
-        /* Marrom escuro para fundos de seção */
-        --cor-clara: #f0f0f0;
-        /* Quase branco para texto principal */
-        --cor-destaque: #e07a5f;
-        /* Laranja avermelhado para botões */
-        --cor-texto: #e0e0e0;
-        /* Cinza claro para textos gerais */
-        --cor-fundo: #252525;
-        /* Cinza muito escuro para o fundo */
-        --cor-link: #ffd166;
-        /* Amarelo claro para links no modo escuro */
-        --cor-box-shadow: rgba(0, 0, 0, 0.3);
-        /* Sombras mais pronunciadas para o modo escuro */
     }
 
     /* Ajustes específicos para o modo escuro */
@@ -479,12 +455,6 @@ body {
    ========================================= */
 /* Navigation styles are now handled in the header section above */
 
-/* Estilizando o texto "Menu:" */
-nav p {
-    color: var(--cor-clara);
-    margin-bottom: var(--espacamento-pequeno);
-}
-
 /* Estilizando a lista de navegação */
 nav ul {
     list-style: none;
@@ -564,7 +534,6 @@ main section:hover {
 
 /* Removendo o estilo conflitante que estava causando a sobra */
 #hero img {
-    /* Remover completamente este seletor ou substituir pelo código abaixo */
     width: 100%;
     height: auto;
     object-fit: cover;
