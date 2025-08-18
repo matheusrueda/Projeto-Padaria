@@ -1,30 +1,32 @@
-/**
- * @file Folha de estilos principal para o site da Padaria Pao Dourado.
- * @summary Este arquivo contem todos os estilos, incluindo variaveis, reset, layout, componentes, e responsividade.
- * @description A estrutura foi otimizada para melhor legibilidade e manutencao, com secoes bem definidas e media queries agrupadas.
- */
-
-/* =========================================================================
-   1. VARIAVEIS E TEMAS (LIGHT & DARK)
-   ========================================================================= */
+/* =========================================
+   VARIÁVEIS E CONFIGURAÇÕES GLOBAIS - CORRIGIDO
+   ========================================= */
 :root {
-    /* Esquema de Cores (Modo Claro - Padrao) */
-    --cor-primaria: #8B4513;    /* Marrom escuro */
-    --cor-secundaria: #DAA520;  /* Dourado */
-    --cor-terciaria: #F5DEB3;   /* Bege claro */
-    --cor-clara: #FFF;          /* Branco */
-    --cor-destaque: #A52A2A;    /* Vermelho terroso */
-    --cor-texto: #333;          /* Cinza escuro */
-    --cor-fundo: #FFFAF0;       /* Tom de bege muito claro */
-    --cor-link: #8B4513;        /* Marrom para links */
+    /* Esquema de cores principais da padaria (modo claro) */
+    --cor-primaria: #8B4513;
+    /* Marrom escuro */
+    --cor-secundaria: #DAA520;
+    /* Dourado */
+    --cor-terciaria: #F5DEB3;
+    /* Bege claro */
+    --cor-clara: #FFF;
+    /* Branco */
+    --cor-destaque: #A52A2A;
+    /* Vermelho terroso */
+    --cor-texto: #333;
+    /* Cinza escuro */
+    --cor-fundo: #FFFAF0;
+    /* Tom de bege muito claro */
+    --cor-link: #8B4513;
+    /* Marrom para links */
     --cor-box-shadow: rgba(0, 0, 0, 0.1);
 
-    /* Espacamentos */
+    /* Espaçamentos padrão */
     --espacamento-pequeno: 0.5rem;
     --espacamento-medio: 1rem;
     --espacamento-grande: 2rem;
 
-    /* Bordas */
+    /* Arredondamento de bordas */
     --borda-arredondada: 8px;
 
     /* Sombras */
@@ -36,211 +38,128 @@
     --fonte-corpo: 'Open Sans', Arial, sans-serif;
 }
 
-/* Esquema de Cores (Modo Escuro) */
+/* Consolidar todas as regras de dark mode em um único bloco */
 @media (prefers-color-scheme: dark) {
     :root {
         --cor-primaria: #ffc554;
+        /* Dourado claro mais visível */
         --cor-secundaria: #e9a743;
+        /* Dourado mais escuro */
         --cor-terciaria: #3d2e1e;
+        /* Marrom escuro */
         --cor-clara: #f0f0f0;
+        /* Quase branco */
         --cor-destaque: #ff8c69;
+        /* Laranja avermelhado mais claro */
         --cor-texto: #e0e0e0;
+        /* Cinza claro */
         --cor-fundo: #1e1e1e;
+        /* Fundo quase preto */
         --cor-link: #ffd166;
+        /* Amarelo claro */
         --cor-box-shadow: rgba(0, 0, 0, 0.3);
     }
 
-    /* Estilos especificos para elementos no modo escuro */
+    /* Ajustes específicos para o modo escuro */
     body {
         background-color: var(--cor-fundo);
-        color: var(--cor-texto);
     }
 
-    main section { background-color: #2a2a2a; }
-    .product-item, #diferenciais li { background-color: #3a3a3a; }
-    #sobre-nos, #horarios { background-color: #32281e; }
-    #horarios .horarios-lista, #horarios .promocao-item { background-color: rgba(255, 255, 255, 0.1); }
+    main section {
+        background-color: #2d2d2d;
+        /* Fundo de seção um pouco mais claro que o fundo principal */
+    }
 
-    #contato input, #contato textarea {
-        background-color: #3a3a3a;
+    #sobre-nos {
+        background-color: #32281e;
+        /* Fundo mais escuro para essa seção específica */
+    }
+
+    .product-item {
+        background-color: #3d3d3d;
+        /* Fundo para itens de produto */
+    }
+
+    #diferenciais li,
+    #horarios .horarios-lista,
+    #horarios .promocao-item {
+        background-color: rgba(255, 255, 255, 0.1);
+        /* Fundo levemente mais claro */
         color: var(--cor-clara);
-        border-color: #555;
     }
 
-    header nav a { color: var(--cor-clara); }
-    header nav a:hover, header nav a.active {
-        background-color: var(--cor-secundaria);
-        color: #1e1e1e !important; /* Cor escura para contraste */
-    }
-
-    .hero-image-container {
-        background: linear-gradient(120deg, #ffc554, #f8d78e, #ffc554);
-        box-shadow: 0 0 15px rgba(255, 197, 84, 0.5);
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: var(--cor-primaria);
+        /* Usar dourado claro para títulos */
     }
 }
 
-
-/* =========================================================================
-   2. RESET, ESTILOS BASE E ACESSIBILIDADE
-   ========================================================================= */
+/* =========================================
+   RESET E ESTILOS BASE
+   ========================================= */
+/* Reset CSS para garantir consistência entre navegadores */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
+/* Configurações básicas do corpo da página */
 body {
     font-family: var(--fonte-corpo);
     color: var(--cor-texto);
     background-color: var(--cor-fundo);
     line-height: 1.6;
+    /* Garantindo que não haja barras de rolagem horizontais */
     overflow-x: hidden;
 
+    /* Layout grid */
     display: grid;
-    grid-template-areas: "header" "main" "footer";
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
     grid-template-columns: minmax(0, 1fr);
     gap: var(--espacamento-grande);
     max-width: 1200px;
     margin: 0 auto;
 
-    /* Padding para o header fixo, ajustado em media queries */
+    /* Espaço para o header fixo */
     padding-top: 120px;
     padding-left: var(--espacamento-medio);
     padding-right: var(--espacamento-medio);
 }
 
+/* Ajustes responsivos para o padding-top do body */
+@media (max-width: 768px) {
+    body {
+        padding-top: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 170px;
+    }
+}
+
+/* Estilos para links em todo o site */
 a {
     color: var(--cor-link);
     text-decoration: none;
     transition: color 0.3s ease;
 }
-a:hover { color: var(--cor-secundaria); }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--fonte-titulos);
-    margin-bottom: var(--espacamento-medio);
-    color: var(--cor-primaria);
-    line-height: 1.2;
-}
-h1 { font-size: 2.5rem; color: var(--cor-secundaria); text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); }
-h2 { font-size: 2rem; border-bottom: 2px solid var(--cor-secundaria); padding-bottom: var(--espacamento-pequeno); display: inline-block; }
-h3 { font-size: 1.5rem; }
-
-p { margin-bottom: var(--espacamento-medio); }
-img { max-width: 100%; height: auto; display: block; border-radius: var(--borda-arredondada); }
-
-/* Melhorias de Acessibilidade */
-a:focus, button:focus, input:focus, textarea:focus {
-    outline: 2px solid var(--cor-secundaria);
-    outline-offset: 3px;
-}
-
-/* Preferencia por movimento reduzido */
-@media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
-}
-
-
-/* =========================================================================
-   3. LAYOUT (HEADER, MAIN, FOOTER)
-   ========================================================================= */
-header {
-    grid-area: header;
-    background-color: var(--cor-terciaria);
-    box-shadow: var(--sombra-media);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-}
-
-.header-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.8rem var(--espacamento-medio);
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.header-welcome {
-    background-color: rgba(0, 0, 0, 0.05); /* Fundo sutil */
-    padding: var(--espacamento-pequeno) var(--espacamento-grande);
-    text-align: center;
-    font-size: 0.9rem;
-}
-.header-welcome p { margin: 0; }
-
-main {
-    grid-area: main;
-    max-width: 1000px;
-    margin: 0 auto;
-    width: 100%;
-}
-
-main section {
-    margin-bottom: var(--espacamento-grande);
-    padding: var(--espacamento-grande);
-    background-color: var(--cor-clara);
-    border-radius: var(--borda-arredondada);
-    box-shadow: var(--sombra-suave);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-main section:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--sombra-media);
-}
-
-footer {
-    grid-area: footer;
-    background-color: var(--cor-primaria);
-    color: var(--cor-clara);
-    padding: var(--espacamento-grande);
-    border-radius: var(--borda-arredondada) var(--borda-arredondada) 0 0;
-    margin-top: var(--espacamento-grande);
-    text-align: center;
-}
-footer h3 {
+a:hover {
     color: var(--cor-secundaria);
-    border-bottom: 1px solid var(--cor-secundaria);
-    display: inline-block;
-    padding-bottom: var(--espacamento-pequeno);
-}
-footer p:last-child {
-    margin-top: var(--espacamento-grande);
-    padding-top: var(--espacamento-pequeno);
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    font-size: 0.9rem;
 }
 
-
-/* =========================================================================
-   4. COMPONENTES (BOTOES, NAVEGACAO, PRODUTOS, FORMULARIOS, ETC.)
-   ========================================================================= */
-
-/* --- Navegacao --- */
-.logo-container h1 { margin: 0; font-size: 1.8rem; white-space: nowrap; }
-header nav ul {
-    display: flex;
-    gap: 0.5rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    overflow-x: auto;
-    scrollbar-width: none; /* Firefox */
-}
-header nav ul::-webkit-scrollbar { display: none; } /* Chrome, Safari */
-header nav li { white-space: nowrap; }
+/* Estilos específicos para navegação */
 header nav a {
     color: var(--cor-primaria);
     font-weight: bold;
@@ -251,42 +170,445 @@ header nav a {
     transition: all 0.3s ease;
     display: inline-block;
 }
-header nav a:hover, header nav a.active {
+
+header nav a:hover,
+header nav a.active {
     background-color: var(--cor-secundaria);
     color: var(--cor-clara);
+    text-decoration: none;
     transform: translateY(-2px);
 }
 
-/* --- Secao Hero --- */
-#hero { text-align: center; padding: var(--espacamento-medio) 0; }
+/* Botões com cor de texto consistente */
+.botao,
+button[type="submit"] {
+    background-color: var(--cor-destaque);
+    color: var(--cor-clara);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-weight: bold;
+    border-radius: var(--borda-arredondada);
+    transition: background-color 0.3s ease;
+}
+
+.botao:hover,
+button[type="submit"]:hover {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-clara);
+    text-decoration: none;
+}
+
+/* Estilos para títulos */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--fonte-titulos);
+    margin-bottom: var(--espacamento-medio);
+    color: var(--cor-primaria);
+    line-height: 1.2;
+}
+
+/* Estilos específicos para cada nível de título */
+h1 {
+    font-size: 2.5rem;
+    color: var(--cor-secundaria);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    font-size: 2rem;
+    border-bottom: 2px solid var(--cor-secundaria);
+    padding-bottom: var(--espacamento-pequeno);
+    display: inline-block;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+/* Estilos para parágrafos */
+p {
+    margin-bottom: var(--espacamento-medio);
+}
+
+/* Estilos para imagens */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--borda-arredondada);
+    /* Note: 'loading="lazy"' should be added directly to img tags in HTML */
+}
+
+/* =========================================
+   LAYOUT PRINCIPAL - CORRIGIDO
+   ========================================= */
+body {
+    font-family: var(--fonte-corpo);
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+    line-height: 1.6;
+    overflow-x: hidden;
+
+    /* Layout grid */
+    display: grid;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--espacamento-grande);
+    max-width: 1200px;
+    margin: 0 auto;
+
+    /* Espaço para o header fixo */
+    padding-top: 120px;
+    padding-left: var(--espacamento-medio);
+    padding-right: var(--espacamento-medio);
+}
+
+/* Ajustes responsivos para o padding-top do body */
+@media (max-width: 768px) {
+    body {
+        padding-top: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 170px;
+    }
+}
+
+/* =========================================
+   CONTEÚDO PRINCIPAL - AJUSTADO PARA LARGURA COMPLETA
+   ========================================= */
+main {
+    grid-area: main;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    /* Centraliza o conteúdo principal */
+}
+
+/* =========================================
+   CABEÇALHO
+   ========================================= */
+header {
+    grid-area: header;
+    background-color: var(--cor-terciaria);
+    border-radius: 0;
+    box-shadow: var(--sombra-media);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 0;
+    overflow: visible;
+}
+
+/* Container para organizar os elementos do header */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem var(--espacamento-medio);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilo para o container do logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-container h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    white-space: nowrap;
+}
+
+/* Removendo o fundo do nav já que agora está no header */
+header nav {
+    background: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+/* Estilizando a lista de navegação para ficar horizontal */
+header nav ul {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    overflow-x: auto;
+    /* Permite rolagem horizontal em telas pequenas */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+/* Esconder a barra de rolagem horizontal */
+header nav ul::-webkit-scrollbar {
+    display: none;
+}
+
+/* Estilizando os itens da lista de navegação */
+header nav li {
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* Estilizando os links da navegação */
+header nav a {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.85rem;
+}
+
+/* Seção de boas-vindas abaixo do menu */
+.header-welcome {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: var(--espacamento-pequeno) var(--espacamento-grande);
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.header-welcome p {
+    margin: 0.5rem 0;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Adicionando espaço no topo do body para compensar o header fixo */
+body {
+    padding-top: 120px;
+    /* Ajuste este valor de acordo com a altura do seu header */
+}
+
+/* =========================================
+   MEDIA QUERIES PARA RESPONSIVIDADE DO HEADER
+   ========================================= */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+        padding: var(--espacamento-pequeno);
+    }
+
+    .logo-container {
+        margin-bottom: var(--espacamento-pequeno);
+    }
+
+    .logo-container h1 {
+        font-size: 1.5rem;
+    }
+
+    header nav ul {
+        justify-content: center;
+    }
+
+    /* Aumentando o padding-top do body para compensar o header maior em mobile */
+    body {
+        padding-top: 150px;
+    }
+}
+
+/* Para telas muito pequenas */
+@media (max-width: 480px) {
+    .logo-container h1 {
+        font-size: 1.3rem;
+    }
+
+    /* Ajustando para que os itens do menu não quebrem mesmo em telas pequenas */
+    header nav ul {
+        justify-content: flex-start;
+        padding-bottom: 5px;
+        /* Espaço para rolagem mais confortável */
+    }
+
+    /* Atualizando o padding-top do body */
+    body {
+        padding-top: 170px;
+    }
+
+    /* Reduzindo tamanho do texto de boas-vindas em telas pequenas */
+    .header-welcome {
+        padding: var(--espacamento-pequeno);
+    }
+
+    .header-welcome p {
+        font-size: 0.8rem;
+    }
+}
+
+/* =========================================
+   NAVEGAÇÃO
+   ========================================= */
+/* Navigation styles are now handled in the header section above */
+
+/* Estilizando a lista de navegação */
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espacamento-pequeno);
+}
+
+/* Para mobile, organizamos verticalmente */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+}
+
+/* Estilizando os itens da lista de navegação */
+nav li {
+    margin-right: var(--espacamento-medio);
+}
+
+/* Estilizando os links da navegação */
+nav a {
+    color: var(--cor-clara);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    border-radius: var(--borda-arredondada);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+nav a:hover {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria);
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+/* Adicionar estado ativo para navegação */
+nav a.active {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria);
+}
+
+/* =========================================
+   CONTEÚDO PRINCIPAL
+   ========================================= */
+main {
+    grid-area: main;
+}
+
+/* Estilizando cada seção do conteúdo */
+main section {
+    margin-bottom: var(--espacamento-grande);
+    padding: var(--espacamento-grande);
+    background-color: var(--cor-clara);
+    border-radius: var(--borda-arredondada);
+    box-shadow: var(--sombra-suave);
+    transition: transform 0.3s ease;
+}
+
+main section:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-media);
+}
+
+/* =========================================
+   SEÇÃO HERO
+   ========================================= */
+#hero {
+    text-align: center;
+    padding: var(--espacamento-medio) 0;
+    /* Reduzido o padding vertical */
+    position: relative;
+}
+
+/* Removendo o estilo conflitante que estava causando a sobra */
+#hero img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: var(--borda-arredondada);
+    margin: 0;
+    /* Remover margem que estava causando o espaçamento extra */
+}
+
+/* Estilização do container da imagem hero - corrigida */
 .hero-image-container {
     position: relative;
     width: 100%;
+    /* Usando 100% para consistência */
     max-width: 1000px;
     margin: var(--espacamento-medio) auto;
+    /* Margem vertical reduzida */
     padding: 10px;
+    /* Padding uniforme em todos os lados */
     border-radius: 12px;
     background: linear-gradient(120deg, var(--cor-secundaria), #f8d78e, var(--cor-secundaria));
     background-size: 300% 300%;
     animation: molduraFluida 8s ease infinite, brilhoSuave 4s ease-in-out infinite;
     box-shadow: 0 0 15px rgba(218, 165, 32, 0.5);
+    box-sizing: border-box;
+    /* Garantir que o padding não afete a largura total */
     overflow: hidden;
+    /* Garantir que conteúdo não ultrapasse as bordas */
 }
+
 .hero-image {
+    display: block;
     width: 100%;
+    height: auto;
     aspect-ratio: 16/9;
+    /* Manter proporção consistente */
     object-fit: cover;
     border-radius: 8px;
     transition: transform 0.5s ease;
+    position: relative;
+    margin: 0;
+    /* Remover qualquer margem */
 }
-.hero-image-container:hover .hero-image { transform: scale(1.02); }
 
-/* --- Produtos --- */
-#produtos h3 { color: var(--cor-destaque); margin-top: var(--espacamento-grande); }
-#produtos ul { list-style-position: inside; margin-bottom: var(--espacamento-grande); padding-left: var(--espacamento-medio); }
-#produtos li { padding: var(--espacamento-pequeno) 0; border-bottom: 1px dashed var(--cor-terciaria); color: inherit; }
-#produtos li:last-child { border-bottom: none; }
-.product-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--espacamento-grande); margin-top: var(--espacamento-grande); }
+/* =========================================
+   SEÇÃO PRODUTOS
+   ========================================= */
+#produtos h3 {
+    color: var(--cor-destaque);
+    margin-top: var(--espacamento-grande);
+}
+
+/* Estilizando a lista de produtos */
+#produtos ul {
+    list-style-position: inside;
+    margin-bottom: var(--espacamento-grande);
+    padding-left: var(--espacamento-medio);
+}
+
+#produtos li {
+    padding: var(--espacamento-pequeno) 0;
+    border-bottom: 1px dashed var(--cor-terciaria);
+}
+
+#produtos li:last-child {
+    border-bottom: none;
+}
+
+/* Galeria de produtos */
+.product-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--espacamento-grande);
+    margin-top: var(--espacamento-grande);
+}
+
 .product-item {
     display: flex;
     flex-direction: column;
@@ -298,16 +620,77 @@ header nav a:hover, header nav a.active {
     transition: transform 0.3s ease;
     position: relative;
     overflow: hidden;
+    z-index: 1;
 }
-.product-item:hover { transform: scale(1.05); }
-.product-item img { width: 100%; height: 180px; object-fit: cover; margin-bottom: var(--espacamento-medio); }
-.product-item h3 { font-size: 1.2rem; color: var(--cor-primaria); }
-.product-item p { margin-top: auto; }
 
-/* --- Sobre Nos & Diferenciais --- */
-#sobre-nos { background-color: var(--cor-terciaria); }
-#sobre-nos p { text-align: justify; }
-#diferenciais ul { list-style: none; padding-left: 0; }
+.product-item:hover {
+    transform: scale(1.05);
+}
+
+.product-item img {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: var(--borda-arredondada);
+    transition: transform 0.5s ease;
+    z-index: 1;
+}
+
+.product-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, var(--cor-secundaria), transparent, var(--cor-secundaria));
+    background-size: 200% 200%;
+    animation: molduraFluida 10s ease infinite;
+    opacity: 0.6;
+    border-radius: calc(var(--borda-arredondada) + 2px);
+    z-index: 0;
+    transition: opacity 0.3s ease;
+}
+
+.product-item:hover::before {
+    opacity: 0.8;
+}
+
+.product-item:hover img {
+    transform: scale(1.05);
+}
+
+.product-item h3 {
+    font-size: 1.2rem;
+    color: var(--cor-primaria);
+    margin-bottom: var(--espacamento-pequeno);
+}
+
+.product-item p {
+    margin-top: auto;
+    /* Empurra para baixo */
+}
+
+/* =========================================
+   SEÇÃO SOBRE NÓS
+   ========================================= */
+#sobre-nos {
+    background-color: var(--cor-terciaria);
+}
+
+#sobre-nos p {
+    text-align: justify;
+}
+
+/* =========================================
+   SEÇÃO DIFERENCIAIS
+   ========================================= */
+#diferenciais ul {
+    list-style: none;
+    padding-left: 0;
+}
+
 #diferenciais li {
     padding: var(--espacamento-medio);
     margin-bottom: var(--espacamento-pequeno);
@@ -315,8 +698,9 @@ header nav a:hover, header nav a.active {
     border-radius: var(--borda-arredondada);
     position: relative;
     padding-left: 2.5rem;
-    color: inherit;
 }
+
+/* Adicionando ícones decorativos antes de cada item da lista */
 #diferenciais li::before {
     content: "✓";
     position: absolute;
@@ -326,31 +710,31 @@ header nav a:hover, header nav a.active {
     font-size: 1.2rem;
 }
 
-/* --- Horarios --- */
-#horarios { text-align: center; }
-#horarios .horarios-container { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--espacamento-grande); }
-#horarios .horarios-lista, #horarios .promocoes { flex: 1; min-width: 280px; max-width: 400px; }
-#horarios .horarios-lista { background-color: rgba(0, 0, 0, 0.02); padding: var(--espacamento-medio); border-radius: var(--borda-arredondada); }
-#horarios ol { list-style-position: inside; text-align: left; }
-#horarios ol li { padding: var(--espacamento-pequeno) 0; border-bottom: 1px dashed var(--cor-primaria); color: inherit; }
-#horarios ol li:last-child { border-bottom: none; }
-#horarios .promocao-item { background-color: rgba(0, 0, 0, 0.02); padding: var(--espacamento-pequeno); border-radius: var(--borda-arredondada); border-left: 3px solid var(--cor-secundaria); margin-bottom: var(--espacamento-pequeno); font-weight: bold; text-align: left; }
-
-/* --- Localizacao (Mapa) --- */
+/* =========================================
+   SEÇÃO LOCALIZAÇÃO
+   ========================================= */
 #localizacao iframe {
     width: 100%;
     height: 50vw;
+    /* Altura proporcional à largura */
     max-height: 450px;
     min-height: 200px;
     border-radius: var(--borda-arredondada);
     box-shadow: var(--sombra-suave);
     margin-top: var(--espacamento-medio);
-    border: 0;
 }
 
-/* --- Formulario de Contato --- */
-#contato form { display: grid; gap: var(--espacamento-pequeno); }
-#contato input, #contato textarea {
+/* =========================================
+   SEÇÃO CONTATO
+   ========================================= */
+#contato form {
+    display: grid;
+    gap: var(--espacamento-pequeno);
+}
+
+/* Estilizando os campos do formulário */
+#contato input,
+#contato textarea {
     width: 100%;
     padding: 0.8rem;
     border: 1px solid #ddd;
@@ -358,17 +742,408 @@ header nav a:hover, header nav a.active {
     font-family: var(--fonte-corpo);
     transition: border-color 0.3s ease;
 }
-#contato input:focus, #contato textarea:focus { border-color: var(--cor-secundaria); }
-#contato button { justify-self: start; }
 
-/* --- Rodape (Social Media) --- */
-.social-media { margin-top: var(--espacamento-medio); }
-.social-media p { color: var(--cor-secundaria); font-weight: bold; }
-.social-media ul { list-style: none; display: flex; flex-wrap: wrap; gap: var(--espacamento-medio); justify-content: center; }
-.social-media li { background-color: rgba(255, 255, 255, 0.1); padding: 0.5rem 1rem; border-radius: var(--borda-arredondada); transition: background-color 0.3s ease; }
-.social-media li:hover { background-color: var(--cor-secundaria); cursor: pointer; }
+#contato input:focus,
+#contato textarea:focus {
+    border-color: var(--cor-secundaria);
+    outline: none;
+}
 
-/* --- Botao Voltar ao Topo --- */
+/* Estilizando o botão do formulário */
+#contato button {
+    background-color: var(--cor-destaque);
+    color: var(--cor-clara);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-family: var(--fonte-corpo);
+    font-weight: bold;
+    border-radius: var(--borda-arredondada);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: var(--espacamento-pequeno);
+    justify-self: start;
+}
+
+#contato button:hover {
+    background-color: var(--cor-secundaria);
+}
+
+/* =========================================
+   RODAPÉ
+   ========================================= */
+footer {
+    grid-area: footer;
+    background-color: var(--cor-primaria);
+    color: var(--cor-clara);
+    padding: var(--espacamento-grande);
+    border-radius: var(--borda-arredondada) var(--borda-arredondada) 0 0;
+    margin-top: var(--espacamento-grande);
+    text-align: center;
+}
+
+footer h3 {
+    color: var(--cor-secundaria);
+    border-bottom: 1px solid var(--cor-secundaria);
+    display: inline-block;
+    padding-bottom: var(--espacamento-pequeno);
+    margin-bottom: var(--espacamento-medio);
+}
+
+/* Organizando o conteúdo do rodapé em 2 colunas em desktop */
+@media (min-width: 768px) {
+    footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--espacamento-grande);
+        text-align: left;
+    }
+
+    footer h3,
+    footer p:last-child {
+        grid-column: span 2;
+        text-align: center;
+    }
+}
+
+/* Estilizando a seção de redes sociais */
+.social-media {
+    margin-top: var(--espacamento-medio);
+}
+
+.social-media p {
+    color: var(--cor-secundaria);
+    font-weight: bold;
+    margin-bottom: var(--espacamento-pequeno);
+}
+
+.social-media ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espacamento-medio);
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .social-media ul {
+        justify-content: flex-start;
+    }
+}
+
+.social-media li {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: var(--borda-arredondada);
+    transition: background-color 0.3s ease;
+}
+
+.social-media li:hover {
+    background-color: var(--cor-secundaria);
+    cursor: pointer;
+}
+
+/* Estilizando o texto de copyright */
+footer p:last-child {
+    margin-top: var(--espacamento-grande);
+    padding-top: var(--espacamento-pequeno);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   MEDIA QUERIES PARA RESPONSIVIDADE
+   ========================================= */
+/* Tablets e dispositivos médios */
+@media (max-width: 991px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.7rem;
+    }
+
+    main section {
+        padding: var(--espacamento-medio);
+    }
+}
+
+/* Dispositivos móveis */
+@media (max-width: 767px) {
+    body {
+        padding: var(--espacamento-pequeno);
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    .product-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    main section {
+        margin-bottom: var(--espacamento-medio);
+        padding: var(--espacamento-medio);
+    }
+
+    #hero img {
+        max-height: 200px;
+    }
+
+    footer {
+        text-align: center;
+    }
+}
+
+/* Dispositivos muito pequenos */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    header,
+    nav,
+    main section,
+    aside,
+    footer {
+        padding: var(--espacamento-pequeno);
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    #contato button {
+        width: 100%;
+        justify-self: center;
+    }
+}
+
+/* =========================================
+   ANIMAÇÕES E EFEITOS VISUAIS
+   ========================================= */
+/* Animação de fade-in para elementos da página */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main section {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Aplicando delays diferentes para criar efeito cascata */
+main section:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+main section:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+main section:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+main section:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+main section:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+/* Efeito de brilho suave nas bordas */
+@keyframes brilhoSuave {
+    0% {
+        filter: drop-shadow(0 0 3px rgba(218, 165, 32, 0.6));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 8px rgba(218, 165, 32, 0.8));
+    }
+
+    100% {
+        filter: drop-shadow(0 0 3px rgba(218, 165, 32, 0.6));
+    }
+}
+
+.hero-image-container {
+    animation: brilhoSuave 4s ease-in-out infinite;
+}
+
+.product-item {
+    animation: brilhoSuave 6s ease-in-out infinite;
+}
+
+/* Defasando as animações para cada item de produto */
+.product-item:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.product-item:nth-child(2) {
+    animation-delay: 2s;
+}
+
+.product-item:nth-child(3) {
+    animation-delay: 4s;
+}
+
+/* =========================================
+   CLASSES DE UTILIDADE
+   ========================================= */
+.destaque {
+    background-color: var(--cor-terciaria);
+    padding: var(--espacamento-pequeno);
+    border-radius: var(--borda-arredondada);
+    border-left: 3px solid var(--cor-secundaria);
+    margin: var(--espacamento-medio) 0;
+}
+
+.texto-centro {
+    text-align: center;
+}
+
+.texto-direita {
+    text-align: right;
+}
+
+.texto-destaque {
+    color: var(--cor-secundaria);
+    font-weight: bold;
+}
+
+.botao {
+    display: inline-block;
+    background-color: var(--cor-destaque);
+    color: var(--cor-clara);
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--borda-arredondada);
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.botao:hover {
+    background-color: var(--cor-secundaria);
+    text-decoration: none;
+    color: var(--cor-clara);
+}
+
+/* Classe para carregar fontes do Google depois */
+.carregar-fontes {
+    font-family: 'Playfair Display', 'Open Sans';
+    visibility: hidden;
+    position: absolute;
+    pointer-events: none;
+}
+
+/* =========================================
+   SEÇÃO HORÁRIOS DE FUNCIONAMENTO (NOVA)
+   ========================================= */
+#horarios {
+    background-color: var(--cor-terciaria);
+    border-radius: var(--borda-arredondada);
+    box-shadow: var(--sombra-suave);
+    padding: var(--espacamento-grande);
+    margin-bottom: var(--espacamento-grande);
+    text-align: center;
+}
+
+#horarios h2 {
+    color: var(--cor-primaria);
+    border-bottom: 2px solid var(--cor-primaria);
+    padding-bottom: var(--espacamento-pequeno);
+    margin-bottom: var(--espacamento-medio);
+    display: inline-block;
+}
+
+#horarios .horarios-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--espacamento-grande);
+}
+
+#horarios .horarios-lista {
+    flex: 1;
+    min-width: 280px;
+    max-width: 400px;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: var(--espacamento-medio);
+    border-radius: var(--borda-arredondada);
+    box-shadow: var(--sombra-suave);
+}
+
+#horarios ol {
+    list-style-position: inside;
+    text-align: left;
+    margin-bottom: var(--espacamento-pequeno);
+}
+
+#horarios ol li {
+    padding: var(--espacamento-pequeno) 0;
+    border-bottom: 1px dashed var(--cor-primaria);
+}
+
+#horarios ol li:last-child {
+    border-bottom: none;
+}
+
+#horarios .promocoes {
+    flex: 1;
+    min-width: 280px;
+    max-width: 400px;
+}
+
+#horarios .promocao-item {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: var(--espacamento-pequeno);
+    border-radius: var(--borda-arredondada);
+    border-left: 3px solid var(--cor-secundaria);
+    margin-bottom: var(--espacamento-pequeno);
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Responsividade para a seção de horários */
+@media (max-width: 768px) {
+    #horarios .horarios-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #horarios .horarios-lista,
+    #horarios .promocoes {
+        width: 100%;
+    }
+}
+
+/* Botão de voltar ao topo (adicionar HTML correspondente) */
 .back-to-top {
     position: fixed;
     bottom: 20px;
@@ -382,120 +1157,243 @@ header nav a:hover, header nav a.active {
     align-items: center;
     justify-content: center;
     opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
+    transition: opacity 0.3s;
     z-index: 999;
     box-shadow: var(--sombra-media);
 }
-.back-to-top.visible { opacity: 1; visibility: visible; }
 
-
-/* =========================================================================
-   5. CLASSES DE UTILIDADE E BOTOES GERAIS
-   ========================================================================= */
-.botao, button[type="submit"] {
-    background-color: var(--cor-destaque);
-    color: var(--cor-clara);
-    border: none;
-    padding: 0.8rem 1.5rem;
-    font-weight: bold;
-    border-radius: var(--borda-arredondada);
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    display: inline-block;
-    text-align: center;
-}
-.botao:hover, button[type="submit"]:hover {
-    background-color: var(--cor-secundaria);
-    color: var(--cor-clara);
+.back-to-top.visible {
+    opacity: 1;
 }
 
+/* Melhorar áreas clicáveis em mobile */
+@media (max-width: 480px) {
+
+    nav a,
+    button,
+    .social-media li {
+        padding: 0.8rem 1rem;
+        /* Aumento de área clicável */
+    }
+
+    nav ul {
+        gap: var(--espacamento-medio);
+    }
+}
+
+/* Melhorar foco para acessibilidade */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+    outline: 2px solid var(--cor-secundaria);
+    outline-offset: 3px;
+}
+
+/* Adicionar comportamento de scroll suave */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Adicionar suporte a preferências de movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.001ms !important;
+        transition-duration: 0.001ms !important;
+    }
+}
+
+/* Base para modo escuro (opcional) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --cor-primaria: #c17f42;
+        --cor-secundaria: #ffc554;
+        --cor-terciaria: #3d2e1e;
+        --cor-clara: #f0f0f0;
+        --cor-texto: #e0e0e0;
+        --cor-fundo: #1a1a1a;
+    }
+}
+
+/* Adicionar ao CSS */
 .form-feedback {
+    display: none;
     padding: 1rem;
+    background-color: var(--cor-terciaria);
     border-radius: var(--borda-arredondada);
     margin-top: var(--espacamento-medio);
     text-align: center;
 }
-.form-feedback.success { background-color: #dff0d8; color: #3c763d; }
-.form-feedback.error { background-color: #f2dede; color: #a94442; }
 
-
-/* =========================================================================
-   6. ANIMACOES
-   ========================================================================= */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-main section { animation: fadeIn 0.5s ease-out forwards; }
-main section:nth-child(1) { animation-delay: 0.1s; }
-main section:nth-child(2) { animation-delay: 0.2s; }
-main section:nth-child(3) { animation-delay: 0.3s; }
-main section:nth-child(4) { animation-delay: 0.4s; }
-main section:nth-child(5) { animation-delay: 0.5s; }
-
-@keyframes brilhoSuave {
-    0%, 100% { filter: drop-shadow(0 0 3px rgba(218, 165, 32, 0.6)); }
-    50% { filter: drop-shadow(0 0 8px rgba(218, 165, 32, 0.8)); }
+.form-feedback.success {
+    background-color: #dff0d8;
+    color: #3c763d;
+    display: block;
 }
 
-@keyframes molduraFluida {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+.form-feedback.error {
+    background-color: #f2dede;
+    color: #a94442;
+    display: block;
 }
 
-
-/* =========================================================================
-   7. MEDIA QUERIES (RESPONSIVIDADE)
-   ========================================================================= */
-
-/* Tablets e dispositivos medios (ate 992px) */
-@media (max-width: 992px) {
-    h1 { font-size: 2.2rem; }
-    h2 { font-size: 1.8rem; }
-    main section { padding: var(--espacamento-medio); }
-}
-
-/* Dispositivos moveis (ate 768px) */
 @media (max-width: 768px) {
-    body { padding-top: 150px; padding-left: var(--espacamento-pequeno); padding-right: var(--espacamento-pequeno); }
 
-    .header-container { flex-direction: column; align-items: center; padding: var(--espacamento-pequeno); }
-    .logo-container { margin-bottom: var(--espacamento-pequeno); }
-    .logo-container h1 { font-size: 1.5rem; }
-    header nav ul { justify-content: center; }
-
-    h1 { font-size: 1.8rem; }
-    h2 { font-size: 1.5rem; }
-    h3 { font-size: 1.3rem; }
-
-    .product-gallery { grid-template-columns: 1fr; }
-    #hero .hero-image { max-height: 250px; }
-
-    footer { text-align: center; }
-    footer .social-media ul { justify-content: center; }
-    footer { display: block; } /* Reverte o grid do footer */
-
-    #horarios .horarios-container { flex-direction: column; align-items: center; }
-    #horarios .horarios-lista, #horarios .promocoes { width: 100%; }
-
-    .product-item, nav a, .social-media li, button { touch-action: manipulation; }
+    .product-item,
+    nav a,
+    .social-media li,
+    button {
+        touch-action: manipulation;
+        /* Melhora responsividade em touch */
+    }
 }
 
-/* Dispositivos muito pequenos (ate 480px) */
+/* Ajustes para garantir legibilidade em diferentes seções */
+@media (prefers-color-scheme: dark) {
+    body {
+        color: var(--cor-texto);
+        background-color: var(--cor-fundo);
+    }
+
+    main section {
+        background-color: #2a2a2a;
+    }
+
+    /* Ajuste específico para produtos e diferenciais */
+    .product-item,
+    #diferenciais li {
+        background-color: #3a3a3a;
+    }
+
+    /* Ajuste para seções com fundo personalizado */
+    #sobre-nos {
+        background-color: #32281e;
+    }
+
+    /* Seção de horários */
+    #horarios {
+        background-color: #32281e;
+    }
+
+    #horarios .horarios-lista,
+    #horarios .promocao-item {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: var(--cor-clara);
+    }
+
+    /* Contato */
+    #contato input,
+    #contato textarea {
+        background-color: #3a3a3a;
+        color: var(--cor-clara);
+        border-color: #555;
+    }
+
+    /* Navegação - garantir legibilidade */
+    header nav a {
+        color: var(--cor-clara);
+    }
+
+    header nav a:hover,
+    header nav a.active {
+        background-color: var(--cor-secundaria);
+        color: #1e1e1e !important;
+        /* Cor escura para garantir contraste */
+    }
+}
+
+/* Garantir cor de texto consistente nos elementos de listas */
+#produtos li,
+#diferenciais li,
+#horarios ol li {
+    color: inherit;
+}
+
+/* =========================================
+   MOLDURAS DOURADAS FLUIDAS PARA IMAGENS
+   ========================================= */
+
+/* Estilização específica para a imagem hero */
+.hero-image-container {
+    position: relative;
+    width: 88%;
+    max-width: 1000px;
+    margin: var(--espacamento-grande) auto;
+    padding: 12px;
+    /* Adicionado espaço para a moldura */
+    border-radius: 12px;
+    background: linear-gradient(120deg, var(--cor-secundaria), #f8d78e, var(--cor-secundaria));
+    background-size: 300% 300%;
+    animation: molduraFluida 8s ease infinite, brilhoSuave 4s ease-in-out infinite;
+    box-shadow: 0 0 15px rgba(218, 165, 32, 0.5);
+}
+
+.hero-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 450px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.5s ease;
+    position: relative;
+    /* Garantir que a imagem fique sobre o background */
+}
+
+/* Remover os pseudoelementos anteriores que estavam causando problemas */
+.hero-image-container::before,
+.hero-image-container::after {
+    content: none;
+}
+
+/* Animação para o efeito fluido nas molduras - Mantido */
+@keyframes molduraFluida {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.hero-image-container:hover .hero-image {
+    transform: scale(1.02);
+}
+
+/* Responsividade para o container da imagem hero */
+@media (max-width: 768px) {
+    .hero-image-container {
+        width: 95%;
+        padding: 8px;
+        /* Reduzindo o padding em telas menores */
+    }
+
+    .hero-image {
+        max-height: 350px;
+    }
+}
+
 @media (max-width: 480px) {
-    body { padding-top: 170px; }
+    .hero-image-container {
+        width: 100%;
+        padding: 6px;
+        /* Reduzindo ainda mais o padding em telas muito pequenas */
+    }
 
-    .logo-container h1 { font-size: 1.3rem; }
-    header nav ul { justify-content: flex-start; padding-bottom: 5px; } /* Permite scroll horizontal */
+    .hero-image {
+        max-height: 250px;
+    }
+}
 
-    .header-welcome { padding: var(--espacamento-pequeno); font-size: 0.8rem; }
-
-    h1 { font-size: 1.5rem; }
-    h2 { font-size: 1.3rem; }
-    h3 { font-size: 1.1rem; }
-
-    nav a, button, .social-media li { padding: 0.8rem 1rem; } /* Aumenta area de clique */
-    nav ul { gap: var(--espacamento-medio); }
-    #contato button { width: 100%; justify-self: center; }
+/* Ajuste para o modo escuro */
+@media (prefers-color-scheme: dark) {
+    .hero-image-container {
+        background: linear-gradient(120deg, #ffc554, #f8d78e, #ffc554);
+        box-shadow: 0 0 15px rgba(255, 197, 84, 0.5);
+    }
 }
