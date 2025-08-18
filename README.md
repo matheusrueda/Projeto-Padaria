@@ -2,19 +2,17 @@
 
 <div align="center">
   <img src="https://img.shields.io/badge/Projeto-Padaria%20P%C3%A3o%20Dourado-brown?style=for-the-badge&logo=bread-slice" alt="Projeto Padaria Pão Dourado"/>
-  <br><br>
-  
-  <!-- Banner do projeto -->
-  <img src="https://via.placeholder.com/800x200/f5deb3/8b4513?text=Padaria+P%C3%A3o+Dourado" width="100%" alt="Banner Padaria Pão Dourado"/>
+  <br>
   
   <p align="center">
     <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5"/>
     <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3"/>
     <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"/>
-    <img src="https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow?style=for-the-badge" alt="Status: Em Desenvolvimento"/>
+    <br>
+    <img src="https://img.shields.io/badge/Status-EM_ANDAMENTO-yellow?style=for-the-badge" alt="Status: Concluído"/>
   </p>
   
-  <h3>🍞 Um projeto educacional de site para padaria com HTML5 semântico 🥐</h3>
+  <h3>🍞 Projeto para estudos de HTML, CSS e Javascript<br>Desenvolvimento de site responsivo para padaria 🥐</h3>
   
   <div align="center">
     <img src="https://img.shields.io/badge/Autor-Matheus%20Rueda-darkgreen?style=for-the-badge" alt="Autor: Matheus Rueda"/>
@@ -26,8 +24,8 @@
 <!-- Aviso de autoria independente -->
 <div align="center">
   <p>⚠️ <b>AVISO IMPORTANTE</b> ⚠️</p>
-  <p>Este projeto foi criado por <b>Matheus Rueda</b> como um estudo pessoal e <b>NÃO</b> possui vínculo oficial<br>com qualquer instituição ou curso de programação web.</p>
-  <p>Todo o conteúdo foi desenvolvido de forma independente para fins de aprendizado.</p>
+  <p>Este projeto foi criado como um estudo pessoal e <b>NÃO</b> possui vínculo oficial<br>com qualquer instituição ou curso de programação web.</p>
+  <p>Todo o conteúdo aqui foi desenvolvido para fins de aprendizado.</p>
 </div>
 
 <br>
@@ -47,11 +45,9 @@
 
 ## 📚 Sobre o Projeto
 
-<img align="right" src="https://via.placeholder.com/250x150/f5deb3/8b4513?text=P%C3%A3o+Dourado" width="250px" alt="Logo Padaria"/>
+Este é um projeto de desenvolvimento web criado como parte do meu aprendizado pessoal em programação web. O projeto consiste na criação de um website para uma padaria fictícia chamada "Pão Dourado", aplicando conceitos modernos de desenvolvimento web como HTML5 semântico, CSS3 responsivo e JavaScript para interatividade.
 
-Este é um projeto de desenvolvimento web criado como parte do meu aprendizado pessoal em programação web. O projeto consiste na criação de um website para uma padaria fictícia chamada "Pão Dourado", aplicando conceitos fundamentais de HTML5 semântico.
-
-A padaria Pão Dourado representa um negócio local tradicional que busca expandir sua presença online, oferecendo aos clientes informações sobre produtos, história, localização e formas de contato.
+A padaria Pão Dourado representa um negócio local tradicional que busca expandir sua presença online, oferecendo aos clientes informações sobre produtos, história, localização e formas de contato, tudo com uma experiência de usuário agradável e design responsivo.
 
 > 💡 **Nota:** Este projeto é puramente educacional e foi desenvolvido por Matheus Rueda como estudo autodidata.
 
@@ -64,15 +60,15 @@ O principal objetivo deste projeto é praticar e demonstrar habilidades em:
 <table>
   <tr>
     <td>✅ Criação de estruturas HTML5 semânticas</td>
-    <td>✅ Organização de conteúdo com hierarquia de títulos</td>
+    <td>✅ CSS3 avançado com variáveis e design responsivo</td>
   </tr>
   <tr>
-    <td>✅ Desenvolvimento de parágrafos bem estruturados</td>
-    <td>✅ Implementação de listas ordenadas e não-ordenadas</td>
+    <td>✅ JavaScript para interatividade e navegação</td>
+    <td>✅ Design adaptativo para diferentes dispositivos</td>
   </tr>
   <tr>
-    <td>✅ Validação de código HTML</td>
-    <td>✅ Documentação profissional de projetos</td>
+    <td>✅ Efeitos visuais e animações CSS</td>
+    <td>✅ Modo escuro com preferências do usuário</td>
   </tr>
 </table>
 
@@ -81,11 +77,10 @@ O principal objetivo deste projeto é praticar e demonstrar habilidades em:
 ## 👀 Demonstração
 
 <div align="center">
-  <img src="https://via.placeholder.com/400x300/f5deb3/8b4513?text=Screenshot+1" width="45%" alt="Screenshot da página inicial"/>
-  &nbsp;&nbsp;
-  <img src="https://via.placeholder.com/400x300/f5deb3/8b4513?text=Screenshot+2" width="45%" alt="Screenshot da seção de produtos"/>
+  <img src="/entregas/PRINT_LIGHT.jpeg" width="45%" alt="Screenshot do site em modo claro"/>
+  <img src="/entregas/PRINT_DARK.jpeg" width="45%" alt="Screenshot do site em modo escuro"/>
   <br><br>
-  <p><i>Capturas de tela do projeto (mockups ilustrativos)</i></p>
+  <p><i>Visualização do site nos modos claro e escuro (mockups ilustrativos)</i></p>
 </div>
 
 <br>
@@ -99,34 +94,24 @@ O website da Padaria Pão Dourado está estruturado da seguinte forma:
   <br>
   <ol>
     <li>
-      <b>Header (Cabeçalho) 🔝</b>
+      <b>Header (Cabeçalho Fixo) 🔝</b>
       <ul>
-        <li>Nome da padaria (h1)</li>
+        <li>Logo e nome da padaria</li>
+        <li>Menu de navegação horizontal</li>
         <li>Mensagem de boas-vindas</li>
-      </ul>
-    </li>
-    <li>
-      <b>Navegação 🧭</b>
-      <ul>
-        <li>Menu com links para as diferentes seções do site</li>
       </ul>
     </li>
     <li>
       <b>Main (Conteúdo Principal) 📄</b>
       <ul>
-        <li>Seção Hero/Destaque</li>
-        <li>Seção de Produtos</li>
-        <li>Seção Sobre Nós</li>
-        <li>Seção Diferenciais</li>
-        <li>Seção Localização</li>
-        <li>Seção Contato</li>
-      </ul>
-    </li>
-    <li>
-      <b>Aside (Barra Lateral) ↪️</b>
-      <ul>
-        <li>Horário de funcionamento (lista ordenada)</li>
-        <li>Promoções da semana</li>
+        <li>Seção Hero com moldura dourada animada</li>
+        <li>Seção de Produtos com efeitos visuais</li>
+        <li>Seção Sobre Nós com história da padaria</li>
+        <li>Seção Diferenciais com lista interativa</li>
+        <li>Seção Horários de Funcionamento</li>
+        <li>Seção Localização com mapa integrado</li>
+        <li>Seção Contato com formulário funcional</li>
+        <li>Botão "Voltar ao topo" com animação</li>
       </ul>
     </li>
     <li>
@@ -147,14 +132,14 @@ O website da Padaria Pão Dourado está estruturado da seguinte forma:
 ```
 Projeto Padaria/
 │
-├── index.html          # Arquivo HTML principal
+├── index.html          # Estrutura HTML semântica
 ├── README.md           # Documentação do projeto
 │
 ├── css/
-│   └── style.css       # Arquivo CSS (a ser desenvolvido)
+│   └── style.css       # Estilos responsivos com variáveis CSS
 │
 ├── js/
-│   └── main.js         # Arquivo JavaScript (a ser desenvolvido)
+│   └── main.js         # Interatividade e navegação suave
 │
 └── images/             # Pasta para imagens do site
     ├── hero-image.jpg
@@ -177,11 +162,11 @@ Projeto Padaria/
       </td>
       <td align="center">
         <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3"/>
-        <br>Estilização (a ser implementado)
+        <br>Design responsivo e animações
       </td>
       <td align="center">
         <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"/>
-        <br>Interatividade (a ser implementado)
+        <br>Interatividade e navegação
       </td>
     </tr>
   </table>
@@ -194,16 +179,20 @@ Projeto Padaria/
 <div align="center">
   <table>
     <tr>
-      <td>✓ Estrutura HTML5 completa e semântica</td>
-      <td>✓ Menu de navegação funcional com âncoras</td>
+      <td>✓ Menu fixo com navegação suave</td>
+      <td>✓ Design totalmente responsivo</td>
     </tr>
     <tr>
-      <td>✓ Seções informativas sobre a padaria</td>
-      <td>✓ Exibição de produtos com imagens</td>
+      <td>✓ Modo escuro automático</td>
+      <td>✓ Molduras douradas animadas</td>
     </tr>
     <tr>
-      <td>✓ Formulário de contato</td>
-      <td>✓ Lista de horários de funcionamento</td>
+      <td>✓ Efeitos visuais e transições</td>
+      <td>✓ Formulário de contato com feedback</td>
+    </tr>
+    <tr>
+      <td>✓ Scroll suave entre seções</td>
+      <td>✓ Botão "Voltar ao topo"</td>
     </tr>
     <tr>
       <td colspan="2" align="center">✓ Integração com Google Maps</td>
@@ -216,29 +205,23 @@ Projeto Padaria/
 ## 🚧 Status do Projeto
 
 <div align="center">
-  <img src="https://progress-bar.dev/30?title=Progresso&width=500&color=8b4513" alt="Barra de progresso: 30%">
-  <p>Este projeto está em desenvolvimento como parte do meu aprendizado pessoal em desenvolvimento web.<br>
-  <b>Atualmente, apenas a estrutura HTML está implementada.</b></p>
+ <h2> EM ANDAMENTO </h2> 
+  <p>O projeto está em desenvolvimento com funcionalidades sendo implementadas e testadas.<br>
+  <b>HTML, CSS e JavaScript totalmente funcionais com design responsivo.</b></p>
 </div>
 
 <br>
 
 ## 🔜 Próximos Passos
 
+Algumas melhorias poderiam ser implementadas futuramente:
+
 <div>
-  <table>
-    <tr>
-      <td>🎨 Implementação de estilos com CSS</td>
-      <td>📱 Adição de responsividade para diferentes dispositivos</td>
-    </tr>
-    <tr>
-      <td>⚙️ Implementação de funcionalidades interativas com JavaScript</td>
-      <td>♿ Melhorias de acessibilidade</td>
-    </tr>
-    <tr>
-      <td colspan="2" align="center">🔍 Otimização para SEO</td>
-    </tr>
-  </table>
+  <ul>
+      <li>🔄 Implementação de um carrossel de imagens</li>
+      <li>🖼️ Galeria de fotos expandida</li>
+      <li> Outras </li>
+  </ul>
 </div>
 
 <br>
@@ -247,7 +230,7 @@ Projeto Padaria/
 
 ```bash
 # Clonar o repositório
-$ git clone https://github.com/seu-usuario/projeto-padaria.git
+$ git clone https://github.com/matheusrueda/projeto-padaria.git
 
 # Entrar no diretório do projeto
 $ cd projeto-padaria
@@ -263,18 +246,12 @@ Ou simplesmente abra o arquivo `index.html` em qualquer navegador web moderno.
 
 ## 👨‍🎓 Contexto Educacional
 
-Este projeto foi desenvolvido por mim, **Matheus Rueda**, como um estudo independente para aprimorar minhas habilidades em desenvolvimento web. O foco principal deste projeto é aplicar conceitos de HTML5 semântico, criando uma estrutura bem organizada e semanticamente correta, seguindo as melhores práticas de desenvolvimento web.
-
-<div align="center">
-  <img src="https://img.shields.io/badge/Projeto%20Independente-Matheus%20Rueda-blue?style=for-the-badge" alt="Projeto Independente"/>
-</div>
-
+Este projeto foi desenvolvido por mim, **Matheus Rueda**, como um estudo independente para aprimorar minhas habilidades em desenvolvimento web. O foco principal deste projeto foi criar uma experiência completa de usuário, aplicando conceitos modernos de front-end como HTML5 semântico, CSS3 com variáveis e animações, e JavaScript para interatividade.
 <br>
 
 ## ⚠️ Isenção de Responsabilidade
 
-Este é um projeto pessoal de estudo e portfólio, desenvolvido de forma independente por **Matheus Rueda**. O projeto **não tem nenhuma afiliação, associação ou endosso** de qualquer instituição de ensino, curso ou empresa. Todas as informações, códigos e conteúdos são criações originais ou foram implementados com finalidade estritamente educacional.
-
+Esse projeto **não tem nenhuma afiliação, associação ou vínculo** com qualquer instituição de ensino, curso ou empresa. Todas as informações, códigos e conteúdos são criações originais ou foram implementados com finalidade estritamente educacional.
 <br>
 
 ---
