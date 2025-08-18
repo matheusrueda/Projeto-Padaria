@@ -19,33 +19,42 @@
 
     <!-- Link para o arquivo CSS externo -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- Adicionar no HEAD do HTML -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <!-- CABEÇALHO DA PÁGINA -->
     <!-- Esta seção conterá o logo, nome da padaria e menu de navegação -->
     <header>
-        <!-- Nome principal da padaria -->
-        <h1>Padaria Pão Dourado</h1>
+        <div class="header-container">
+            <!-- Logo e nome da padaria -->
+            <div class="logo-container">
+                <h1>Padaria Pão Dourado</h1>
+            </div>
 
-        <!-- Mensagem de boas-vindas aos visitantes -->
-        <p>Bem-vindos à Padaria Pão Dourado! Há mais de 20 anos servindo os melhores pães, doces e salgados da cidade.
-            Venha conhecer nossos produtos fresquinhos feitos diariamente com muito carinho e ingredientes selecionados.
-        </p>
+            <!-- NAVEGAÇÃO PRINCIPAL agora dentro do header -->
+            <nav>
+                <ul>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="#sobre-nos">Sobre Nós</a></li>
+                    <li><a href="#diferenciais">Nossos Diferenciais</a></li>
+                    <li><a href="#horarios">Horários</a></li>
+                    <li><a href="#localizacao">Localização</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Mensagem de boas-vindas abaixo do menu -->
+        <div class="header-welcome">
+            <p>Mais de 20 anos servidos os melhores pães, doces e salgados da cidade!</p>
+        </div>
     </header>
-
-    <!-- NAVEGAÇÃO PRINCIPAL -->
-    <!-- Menu de navegação para as diferentes seções do site -->
-    <nav>
-        <p><strong>Menu:</strong></p>
-        <ul>
-            <li><a href="#produtos">Produtos</a></li>
-            <li><a href="#sobre-nos">Sobre Nós</a></li>
-            <li><a href="#diferenciais">Nossos Diferenciais</a></li>
-            <li><a href="#localizacao">Localização</a></li>
-            <li><a href="#contato">Contato</a></li>
-        </ul>
-    </nav>
 
     <!-- CONTEÚDO PRINCIPAL -->
     <!-- Área principal onde será exibido o conteúdo das diferentes páginas -->
@@ -56,7 +65,9 @@
             <h2>Descubra o Sabor do Nosso Pão</h2>
             <p>Venha experimentar nossos pães fresquinhos, feitos com receitas tradicionais e ingredientes de qualidade.
             </p>
-            <img src="images/hero-image.jpg" alt="Imagem de destaque da padaria">
+            <div class="hero-image-container">
+                <img src="images/hero-image.jpg" alt="Imagem de destaque da padaria" class="hero-image" loading="lazy">
+            </div>
         </section>
 
         <!-- SEÇÃO PRODUTOS -->

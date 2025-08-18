@@ -1,26 +1,25 @@
 /* =========================================
-   VARIÁVEIS E CONFIGURAÇÕES GLOBAIS
+   VARIÁVEIS E CONFIGURAÇÕES GLOBAIS - CORRIGIDO
    ========================================= */
 :root {
-    /* Esquema de cores principais da padaria */
+    /* Esquema de cores principais da padaria (modo claro) */
     --cor-primaria: #8B4513;
-    /* Marrom escuro para textos principais */
+    /* Marrom escuro */
     --cor-secundaria: #DAA520;
-    /* Dourado para destaques */
+    /* Dourado */
     --cor-terciaria: #F5DEB3;
-    /* Bege claro para fundos */
+    /* Bege claro */
     --cor-clara: #FFF;
-    /* Branco para contrastes */
+    /* Branco */
     --cor-destaque: #A52A2A;
-    /* Vermelho terroso para botões */
+    /* Vermelho terroso */
     --cor-texto: #333;
-    /* Cinza escuro para textos gerais */
+    /* Cinza escuro */
     --cor-fundo: #FFFAF0;
-    /* Tom de bege muito claro para o fundo */
-
-    /* Fontes */
-    --fonte-titulos: 'Playfair Display', Georgia, serif;
-    --fonte-corpo: 'Open Sans', Arial, sans-serif;
+    /* Tom de bege muito claro */
+    --cor-link: #8B4513;
+    /* Marrom para links */
+    --cor-box-shadow: rgba(0, 0, 0, 0.1);
 
     /* Espaçamentos padrão */
     --espacamento-pequeno: 0.5rem;
@@ -33,6 +32,95 @@
     /* Sombras */
     --sombra-suave: 0 2px 5px rgba(0, 0, 0, 0.1);
     --sombra-media: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    /* Fontes */
+    --fonte-titulos: 'Playfair Display', Georgia, serif;
+    --fonte-corpo: 'Open Sans', Arial, sans-serif;
+}
+
+/* REMOVER a definição duplicada de dark mode no final do arquivo */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --cor-primaria: #ffc554;
+        /* Dourado claro mais visível */
+        --cor-secundaria: #e9a743;
+        /* Dourado mais escuro */
+        --cor-terciaria: #3d2e1e;
+        /* Marrom escuro */
+        --cor-clara: #f0f0f0;
+        /* Quase branco */
+        --cor-destaque: #ff8c69;
+        /* Laranja avermelhado mais claro */
+        --cor-texto: #e0e0e0;
+        /* Cinza claro */
+        --cor-fundo: #1e1e1e;
+        /* Fundo quase preto */
+        --cor-link: #ffd166;
+        /* Amarelo claro */
+        --cor-box-shadow: rgba(0, 0, 0, 0.3);
+    }
+}
+
+/* Base para modo escuro - MELHORADO PARA LEGIBILIDADE */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --cor-primaria: #ffc554;
+        /* Dourado claro para melhor visibilidade */
+        --cor-secundaria: #e9a743;
+        /* Dourado mais escuro para destaques */
+        --cor-terciaria: #3d2e1e;
+        /* Marrom escuro para fundos de seção */
+        --cor-clara: #f0f0f0;
+        /* Quase branco para texto principal */
+        --cor-destaque: #e07a5f;
+        /* Laranja avermelhado para botões */
+        --cor-texto: #e0e0e0;
+        /* Cinza claro para textos gerais */
+        --cor-fundo: #252525;
+        /* Cinza muito escuro para o fundo */
+        --cor-link: #ffd166;
+        /* Amarelo claro para links no modo escuro */
+        --cor-box-shadow: rgba(0, 0, 0, 0.3);
+        /* Sombras mais pronunciadas para o modo escuro */
+    }
+
+    /* Ajustes específicos para o modo escuro */
+    body {
+        background-color: var(--cor-fundo);
+    }
+
+    main section {
+        background-color: #2d2d2d;
+        /* Fundo de seção um pouco mais claro que o fundo principal */
+    }
+
+    #sobre-nos {
+        background-color: #32281e;
+        /* Fundo mais escuro para essa seção específica */
+    }
+
+    .product-item {
+        background-color: #3d3d3d;
+        /* Fundo para itens de produto */
+    }
+
+    #diferenciais li,
+    #horarios .horarios-lista,
+    #horarios .promocao-item {
+        background-color: rgba(255, 255, 255, 0.1);
+        /* Fundo levemente mais claro */
+        color: var(--cor-clara);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: var(--cor-primaria);
+        /* Usar dourado claro para títulos */
+    }
 }
 
 /* =========================================
@@ -53,18 +141,85 @@ body {
     line-height: 1.6;
     /* Garantindo que não haja barras de rolagem horizontais */
     overflow-x: hidden;
+
+    /* Layout grid */
+    display: grid;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--espacamento-grande);
+    max-width: 1200px;
+    margin: 0 auto;
+
+    /* Espaço para o header fixo */
+    padding-top: 120px;
+    padding-left: var(--espacamento-medio);
+    padding-right: var(--espacamento-medio);
+}
+
+/* Ajustes responsivos para o padding-top do body */
+@media (max-width: 768px) {
+    body {
+        padding-top: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 170px;
+    }
 }
 
 /* Estilos para links em todo o site */
 a {
-    color: var(--cor-primaria);
+    color: var(--cor-link);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 a:hover {
     color: var(--cor-secundaria);
-    text-decoration: underline;
+}
+
+/* Estilos específicos para navegação */
+header nav a {
+    color: var(--cor-primaria);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    padding: 0.5rem 0.8rem;
+    border-radius: var(--borda-arredondada);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+header nav a:hover,
+header nav a.active {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-clara);
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+/* Botões com cor de texto consistente */
+.botao,
+button[type="submit"] {
+    background-color: var(--cor-destaque);
+    color: var(--cor-clara);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-weight: bold;
+    border-radius: var(--borda-arredondada);
+    transition: background-color 0.3s ease;
+}
+
+.botao:hover,
+button[type="submit"]:hover {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-clara);
+    text-decoration: none;
 }
 
 /* Estilos para títulos */
@@ -108,41 +263,48 @@ img {
     max-width: 100%;
     height: auto;
     border-radius: var(--borda-arredondada);
-    loading: "lazy";
-    /* Adicionar carregamento preguiçoso */
+    /* Note: 'loading="lazy"' should be added directly to img tags in HTML */
 }
 
 /* =========================================
-   LAYOUT PRINCIPAL - ATUALIZADO PARA CENTRALIZAÇÃO
+   LAYOUT PRINCIPAL - CORRIGIDO
    ========================================= */
 body {
+    font-family: var(--fonte-corpo);
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+    line-height: 1.6;
+    overflow-x: hidden;
+
+    /* Layout grid */
     display: grid;
     grid-template-areas:
         "header"
-        "nav"
         "main"
         "footer";
     grid-template-columns: minmax(0, 1fr);
-    /* Previne overflow horizontal */
     gap: var(--espacamento-grande);
-    padding: var(--espacamento-grande) var(--espacamento-medio);
     max-width: 1200px;
     margin: 0 auto;
+
+    /* Espaço para o header fixo */
+    padding-top: 120px;
+    padding-left: var(--espacamento-medio);
+    padding-right: var(--espacamento-medio);
 }
 
-/* Removemos a media query que reorganizava o layout para a barra lateral */
-/* 
-@media (min-width: 992px) {
+/* Ajustes responsivos para o padding-top do body */
+@media (max-width: 768px) {
     body {
-        grid-template-areas:
-            "header header"
-            "nav nav"
-            "main aside"
-            "footer footer";
-        grid-template-columns: 3fr 1fr;
+        padding-top: 150px;
     }
 }
-*/
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 170px;
+    }
+}
 
 /* =========================================
    CONTEÚDO PRINCIPAL - AJUSTADO PARA LARGURA COMPLETA
@@ -160,44 +322,162 @@ main {
    ========================================= */
 header {
     grid-area: header;
-    text-align: center;
-    padding: var(--espacamento-grande);
     background-color: var(--cor-terciaria);
-    border-radius: var(--borda-arredondada);
-    box-shadow: var(--sombra-suave);
-    position: relative;
-    overflow: hidden;
-}
-
-/* Efeito decorativo no header */
-header::before {
-    content: "";
-    position: absolute;
+    border-radius: 0;
+    box-shadow: var(--sombra-media);
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: url('https://via.placeholder.com/1200x300/f5deb3/8b4513?text=Padaria+P%C3%A3o+Dourado') center/cover;
-    opacity: 0.2;
-    z-index: 0;
+    z-index: 1000;
+    padding: 0;
+    overflow: visible;
 }
 
-/* Garantindo que o conteúdo fique sobre o background */
-header>* {
-    position: relative;
-    z-index: 1;
+/* Container para organizar os elementos do header */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem var(--espacamento-medio);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilo para o container do logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-container h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    white-space: nowrap;
+}
+
+/* Removendo o fundo do nav já que agora está no header */
+header nav {
+    background: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+/* Estilizando a lista de navegação para ficar horizontal */
+header nav ul {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    overflow-x: auto;
+    /* Permite rolagem horizontal em telas pequenas */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+/* Esconder a barra de rolagem horizontal */
+header nav ul::-webkit-scrollbar {
+    display: none;
+}
+
+/* Estilizando os itens da lista de navegação */
+header nav li {
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* Estilizando os links da navegação */
+header nav a {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.85rem;
+}
+
+/* Seção de boas-vindas abaixo do menu */
+.header-welcome {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: var(--espacamento-pequeno) var(--espacamento-grande);
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.header-welcome p {
+    margin: 0.5rem 0;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Adicionando espaço no topo do body para compensar o header fixo */
+body {
+    padding-top: 120px;
+    /* Ajuste este valor de acordo com a altura do seu header */
+}
+
+/* =========================================
+   MEDIA QUERIES PARA RESPONSIVIDADE DO HEADER
+   ========================================= */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+        padding: var(--espacamento-pequeno);
+    }
+
+    .logo-container {
+        margin-bottom: var(--espacamento-pequeno);
+    }
+
+    .logo-container h1 {
+        font-size: 1.5rem;
+    }
+
+    header nav ul {
+        justify-content: center;
+    }
+
+    /* Aumentando o padding-top do body para compensar o header maior em mobile */
+    body {
+        padding-top: 150px;
+    }
+}
+
+/* Para telas muito pequenas */
+@media (max-width: 480px) {
+    .logo-container h1 {
+        font-size: 1.3rem;
+    }
+
+    /* Ajustando para que os itens do menu não quebrem mesmo em telas pequenas */
+    header nav ul {
+        justify-content: flex-start;
+        padding-bottom: 5px;
+        /* Espaço para rolagem mais confortável */
+    }
+
+    /* Atualizando o padding-top do body */
+    body {
+        padding-top: 170px;
+    }
+
+    /* Reduzindo tamanho do texto de boas-vindas em telas pequenas */
+    .header-welcome {
+        padding: var(--espacamento-pequeno);
+    }
+
+    .header-welcome p {
+        font-size: 0.8rem;
+    }
 }
 
 /* =========================================
    NAVEGAÇÃO
    ========================================= */
-nav {
-    grid-area: nav;
-    background-color: var(--cor-primaria);
-    padding: var(--espacamento-medio);
-    border-radius: var(--borda-arredondada);
-    box-shadow: var(--sombra-suave);
-}
+/* Navigation styles are now handled in the header section above */
 
 /* Estilizando o texto "Menu:" */
 nav p {
@@ -277,16 +557,55 @@ main section:hover {
    ========================================= */
 #hero {
     text-align: center;
-    padding: var(--espacamento-grande) 0;
+    padding: var(--espacamento-medio) 0;
+    /* Reduzido o padding vertical */
     position: relative;
 }
 
+/* Removendo o estilo conflitante que estava causando a sobra */
 #hero img {
+    /* Remover completamente este seletor ou substituir pelo código abaixo */
     width: 100%;
-    max-height: 400px;
+    height: auto;
     object-fit: cover;
-    margin-top: var(--espacamento-grande);
-    box-shadow: var(--sombra-media);
+    border-radius: var(--borda-arredondada);
+    margin: 0;
+    /* Remover margem que estava causando o espaçamento extra */
+}
+
+/* Estilização do container da imagem hero - corrigida */
+.hero-image-container {
+    position: relative;
+    width: 100%;
+    /* Usando 100% para consistência */
+    max-width: 1000px;
+    margin: var(--espacamento-medio) auto;
+    /* Margem vertical reduzida */
+    padding: 10px;
+    /* Padding uniforme em todos os lados */
+    border-radius: 12px;
+    background: linear-gradient(120deg, var(--cor-secundaria), #f8d78e, var(--cor-secundaria));
+    background-size: 300% 300%;
+    animation: molduraFluida 8s ease infinite, brilhoSuave 4s ease-in-out infinite;
+    box-shadow: 0 0 15px rgba(218, 165, 32, 0.5);
+    box-sizing: border-box;
+    /* Garantir que o padding não afete a largura total */
+    overflow: hidden;
+    /* Garantir que conteúdo não ultrapasse as bordas */
+}
+
+.hero-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    /* Manter proporção consistente */
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.5s ease;
+    position: relative;
+    margin: 0;
+    /* Remover qualquer margem */
 }
 
 /* =========================================
@@ -330,6 +649,9 @@ main section:hover {
     background-color: var(--cor-terciaria);
     border-radius: var(--borda-arredondada);
     transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
 }
 
 .product-item:hover {
@@ -337,10 +659,37 @@ main section:hover {
 }
 
 .product-item img {
+    position: relative;
     width: 100%;
     height: 180px;
     object-fit: cover;
-    margin-bottom: var(--espacamento-medio);
+    border-radius: var(--borda-arredondada);
+    transition: transform 0.5s ease;
+    z-index: 1;
+}
+
+.product-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, var(--cor-secundaria), transparent, var(--cor-secundaria));
+    background-size: 200% 200%;
+    animation: molduraFluida 10s ease infinite;
+    opacity: 0.6;
+    border-radius: calc(var(--borda-arredondada) + 2px);
+    z-index: 0;
+    transition: opacity 0.3s ease;
+}
+
+.product-item:hover::before {
+    opacity: 0.8;
+}
+
+.product-item:hover img {
+    transform: scale(1.05);
 }
 
 .product-item h3 {
@@ -659,6 +1008,42 @@ main section:nth-child(5) {
     animation-delay: 0.5s;
 }
 
+/* Efeito de brilho suave nas bordas */
+@keyframes brilhoSuave {
+    0% {
+        filter: drop-shadow(0 0 3px rgba(218, 165, 32, 0.6));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 8px rgba(218, 165, 32, 0.8));
+    }
+
+    100% {
+        filter: drop-shadow(0 0 3px rgba(218, 165, 32, 0.6));
+    }
+}
+
+.hero-image-container {
+    animation: brilhoSuave 4s ease-in-out infinite;
+}
+
+.product-item {
+    animation: brilhoSuave 6s ease-in-out infinite;
+}
+
+/* Defasando as animações para cada item de produto */
+.product-item:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.product-item:nth-child(2) {
+    animation-delay: 2s;
+}
+
+.product-item:nth-child(3) {
+    animation-delay: 4s;
+}
+
 /* =========================================
    CLASSES DE UTILIDADE
    ========================================= */
@@ -891,5 +1276,155 @@ html {
     button {
         touch-action: manipulation;
         /* Melhora responsividade em touch */
+    }
+}
+
+/* Ajustes para garantir legibilidade em diferentes seções */
+@media (prefers-color-scheme: dark) {
+    body {
+        color: var(--cor-texto);
+        background-color: var(--cor-fundo);
+    }
+
+    main section {
+        background-color: #2a2a2a;
+    }
+
+    /* Ajuste específico para produtos e diferenciais */
+    .product-item,
+    #diferenciais li {
+        background-color: #3a3a3a;
+    }
+
+    /* Ajuste para seções com fundo personalizado */
+    #sobre-nos {
+        background-color: #32281e;
+    }
+
+    /* Seção de horários */
+    #horarios {
+        background-color: #32281e;
+    }
+
+    #horarios .horarios-lista,
+    #horarios .promocao-item {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: var(--cor-clara);
+    }
+
+    /* Contato */
+    #contato input,
+    #contato textarea {
+        background-color: #3a3a3a;
+        color: var(--cor-clara);
+        border-color: #555;
+    }
+
+    /* Navegação - garantir legibilidade */
+    header nav a {
+        color: var(--cor-clara);
+    }
+
+    header nav a:hover,
+    header nav a.active {
+        background-color: var(--cor-secundaria);
+        color: #1e1e1e !important;
+        /* Cor escura para garantir contraste */
+    }
+}
+
+/* Garantir cor de texto consistente nos elementos de listas */
+#produtos li,
+#diferenciais li,
+#horarios ol li {
+    color: inherit;
+}
+
+/* =========================================
+   MOLDURAS DOURADAS FLUIDAS PARA IMAGENS
+   ========================================= */
+
+/* Estilização específica para a imagem hero */
+.hero-image-container {
+    position: relative;
+    width: 88%;
+    max-width: 1000px;
+    margin: var(--espacamento-grande) auto;
+    padding: 12px;
+    /* Adicionado espaço para a moldura */
+    border-radius: 12px;
+    background: linear-gradient(120deg, var(--cor-secundaria), #f8d78e, var(--cor-secundaria));
+    background-size: 300% 300%;
+    animation: molduraFluida 8s ease infinite, brilhoSuave 4s ease-in-out infinite;
+    box-shadow: 0 0 15px rgba(218, 165, 32, 0.5);
+}
+
+.hero-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 450px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.5s ease;
+    position: relative;
+    /* Garantir que a imagem fique sobre o background */
+}
+
+/* Remover os pseudoelementos anteriores que estavam causando problemas */
+.hero-image-container::before,
+.hero-image-container::after {
+    content: none;
+}
+
+/* Animação para o efeito fluido nas molduras - Mantido */
+@keyframes molduraFluida {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.hero-image-container:hover .hero-image {
+    transform: scale(1.02);
+}
+
+/* Responsividade para o container da imagem hero */
+@media (max-width: 768px) {
+    .hero-image-container {
+        width: 95%;
+        padding: 8px;
+        /* Reduzindo o padding em telas menores */
+    }
+
+    .hero-image {
+        max-height: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-image-container {
+        width: 100%;
+        padding: 6px;
+        /* Reduzindo ainda mais o padding em telas muito pequenas */
+    }
+
+    .hero-image {
+        max-height: 250px;
+    }
+}
+
+/* Ajuste para o modo escuro */
+@media (prefers-color-scheme: dark) {
+    .hero-image-container {
+        background: linear-gradient(120deg, #ffc554, #f8d78e, #ffc554);
+        box-shadow: 0 0 15px rgba(255, 197, 84, 0.5);
     }
 }
