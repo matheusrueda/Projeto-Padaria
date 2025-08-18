@@ -1,0 +1,895 @@
+/* =========================================
+   VARIÁVEIS E CONFIGURAÇÕES GLOBAIS
+   ========================================= */
+:root {
+    /* Esquema de cores principais da padaria */
+    --cor-primaria: #8B4513;
+    /* Marrom escuro para textos principais */
+    --cor-secundaria: #DAA520;
+    /* Dourado para destaques */
+    --cor-terciaria: #F5DEB3;
+    /* Bege claro para fundos */
+    --cor-clara: #FFF;
+    /* Branco para contrastes */
+    --cor-destaque: #A52A2A;
+    /* Vermelho terroso para botões */
+    --cor-texto: #333;
+    /* Cinza escuro para textos gerais */
+    --cor-fundo: #FFFAF0;
+    /* Tom de bege muito claro para o fundo */
+
+    /* Fontes */
+    --fonte-titulos: 'Playfair Display', Georgia, serif;
+    --fonte-corpo: 'Open Sans', Arial, sans-serif;
+
+    /* Espaçamentos padrão */
+    --espacamento-pequeno: 0.5rem;
+    --espacamento-medio: 1rem;
+    --espacamento-grande: 2rem;
+
+    /* Arredondamento de bordas */
+    --borda-arredondada: 8px;
+
+    /* Sombras */
+    --sombra-suave: 0 2px 5px rgba(0, 0, 0, 0.1);
+    --sombra-media: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================================
+   RESET E ESTILOS BASE
+   ========================================= */
+/* Reset CSS para garantir consistência entre navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configurações básicas do corpo da página */
+body {
+    font-family: var(--fonte-corpo);
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+    line-height: 1.6;
+    /* Garantindo que não haja barras de rolagem horizontais */
+    overflow-x: hidden;
+}
+
+/* Estilos para links em todo o site */
+a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--cor-secundaria);
+    text-decoration: underline;
+}
+
+/* Estilos para títulos */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--fonte-titulos);
+    margin-bottom: var(--espacamento-medio);
+    color: var(--cor-primaria);
+    line-height: 1.2;
+}
+
+/* Estilos específicos para cada nível de título */
+h1 {
+    font-size: 2.5rem;
+    color: var(--cor-secundaria);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    font-size: 2rem;
+    border-bottom: 2px solid var(--cor-secundaria);
+    padding-bottom: var(--espacamento-pequeno);
+    display: inline-block;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+/* Estilos para parágrafos */
+p {
+    margin-bottom: var(--espacamento-medio);
+}
+
+/* Estilos para imagens */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--borda-arredondada);
+    loading: "lazy";
+    /* Adicionar carregamento preguiçoso */
+}
+
+/* =========================================
+   LAYOUT PRINCIPAL - ATUALIZADO PARA CENTRALIZAÇÃO
+   ========================================= */
+body {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
+    grid-template-columns: minmax(0, 1fr);
+    /* Previne overflow horizontal */
+    gap: var(--espacamento-grande);
+    padding: var(--espacamento-grande) var(--espacamento-medio);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Removemos a media query que reorganizava o layout para a barra lateral */
+/* 
+@media (min-width: 992px) {
+    body {
+        grid-template-areas:
+            "header header"
+            "nav nav"
+            "main aside"
+            "footer footer";
+        grid-template-columns: 3fr 1fr;
+    }
+}
+*/
+
+/* =========================================
+   CONTEÚDO PRINCIPAL - AJUSTADO PARA LARGURA COMPLETA
+   ========================================= */
+main {
+    grid-area: main;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    /* Centraliza o conteúdo principal */
+}
+
+/* =========================================
+   CABEÇALHO
+   ========================================= */
+header {
+    grid-area: header;
+    text-align: center;
+    padding: var(--espacamento-grande);
+    background-color: var(--cor-terciaria);
+    border-radius: var(--borda-arredondada);
+    box-shadow: var(--sombra-suave);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efeito decorativo no header */
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://via.placeholder.com/1200x300/f5deb3/8b4513?text=Padaria+P%C3%A3o+Dourado') center/cover;
+    opacity: 0.2;
+    z-index: 0;
+}
+
+/* Garantindo que o conteúdo fique sobre o background */
+header>* {
+    position: relative;
+    z-index: 1;
+}
+
+/* =========================================
+   NAVEGAÇÃO
+   ========================================= */
+nav {
+    grid-area: nav;
+    background-color: var(--cor-primaria);
+    padding: var(--espacamento-medio);
+    border-radius: var(--borda-arredondada);
+    box-shadow: var(--sombra-suave);
+}
+
+/* Estilizando o texto "Menu:" */
+nav p {
+    color: var(--cor-clara);
+    margin-bottom: var(--espacamento-pequeno);
+}
+
+/* Estilizando a lista de navegação */
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espacamento-pequeno);
+}
+
+/* Para mobile, organizamos verticalmente */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+}
+
+/* Estilizando os itens da lista de navegação */
+nav li {
+    margin-right: var(--espacamento-medio);
+}
+
+/* Estilizando os links da navegação */
+nav a {
+    color: var(--cor-clara);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    border-radius: var(--borda-arredondada);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+nav a:hover {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria);
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+/* Adicionar estado ativo para navegação */
+nav a.active {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria);
+}
+
+/* =========================================
+   CONTEÚDO PRINCIPAL
+   ========================================= */
+main {
+    grid-area: main;
+}
+
+/* Estilizando cada seção do conteúdo */
+main section {
+    margin-bottom: var(--espacamento-grande);
+    padding: var(--espacamento-grande);
+    background-color: var(--cor-clara);
+    border-radius: var(--borda-arredondada);
+    box-shadow: var(--sombra-suave);
+    transition: transform 0.3s ease;
+}
+
+main section:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-media);
+}
+
+/* =========================================
+   SEÇÃO HERO
+   ========================================= */
+#hero {
+    text-align: center;
+    padding: var(--espacamento-grande) 0;
+    position: relative;
+}
+
+#hero img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    margin-top: var(--espacamento-grande);
+    box-shadow: var(--sombra-media);
+}
+
+/* =========================================
+   SEÇÃO PRODUTOS
+   ========================================= */
+#produtos h3 {
+    color: var(--cor-destaque);
+    margin-top: var(--espacamento-grande);
+}
+
+/* Estilizando a lista de produtos */
+#produtos ul {
+    list-style-position: inside;
+    margin-bottom: var(--espacamento-grande);
+    padding-left: var(--espacamento-medio);
+}
+
+#produtos li {
+    padding: var(--espacamento-pequeno) 0;
+    border-bottom: 1px dashed var(--cor-terciaria);
+}
+
+#produtos li:last-child {
+    border-bottom: none;
+}
+
+/* Galeria de produtos */
+.product-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--espacamento-grande);
+    margin-top: var(--espacamento-grande);
+}
+
+.product-item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-align: center;
+    padding: var(--espacamento-medio);
+    background-color: var(--cor-terciaria);
+    border-radius: var(--borda-arredondada);
+    transition: transform 0.3s ease;
+}
+
+.product-item:hover {
+    transform: scale(1.05);
+}
+
+.product-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    margin-bottom: var(--espacamento-medio);
+}
+
+.product-item h3 {
+    font-size: 1.2rem;
+    color: var(--cor-primaria);
+    margin-bottom: var(--espacamento-pequeno);
+}
+
+.product-item p {
+    margin-top: auto;
+    /* Empurra para baixo */
+}
+
+/* =========================================
+   SEÇÃO SOBRE NÓS
+   ========================================= */
+#sobre-nos {
+    background-color: var(--cor-terciaria);
+}
+
+#sobre-nos p {
+    text-align: justify;
+}
+
+/* =========================================
+   SEÇÃO DIFERENCIAIS
+   ========================================= */
+#diferenciais ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#diferenciais li {
+    padding: var(--espacamento-medio);
+    margin-bottom: var(--espacamento-pequeno);
+    background-color: var(--cor-terciaria);
+    border-radius: var(--borda-arredondada);
+    position: relative;
+    padding-left: 2.5rem;
+}
+
+/* Adicionando ícones decorativos antes de cada item da lista */
+#diferenciais li::before {
+    content: "✓";
+    position: absolute;
+    left: 1rem;
+    color: var(--cor-secundaria);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* =========================================
+   SEÇÃO LOCALIZAÇÃO
+   ========================================= */
+#localizacao iframe {
+    width: 100%;
+    height: 50vw;
+    /* Altura proporcional à largura */
+    max-height: 450px;
+    min-height: 200px;
+    border-radius: var(--borda-arredondada);
+    box-shadow: var(--sombra-suave);
+    margin-top: var(--espacamento-medio);
+}
+
+/* =========================================
+   SEÇÃO CONTATO
+   ========================================= */
+#contato form {
+    display: grid;
+    gap: var(--espacamento-pequeno);
+}
+
+/* Estilizando os campos do formulário */
+#contato input,
+#contato textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: var(--borda-arredondada);
+    font-family: var(--fonte-corpo);
+    transition: border-color 0.3s ease;
+}
+
+#contato input:focus,
+#contato textarea:focus {
+    border-color: var(--cor-secundaria);
+    outline: none;
+}
+
+/* Estilizando o botão do formulário */
+#contato button {
+    background-color: var(--cor-destaque);
+    color: var(--cor-clara);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-family: var(--fonte-corpo);
+    font-weight: bold;
+    border-radius: var(--borda-arredondada);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: var(--espacamento-pequeno);
+    justify-self: start;
+}
+
+#contato button:hover {
+    background-color: var(--cor-secundaria);
+}
+
+/* =========================================
+   RODAPÉ
+   ========================================= */
+footer {
+    grid-area: footer;
+    background-color: var(--cor-primaria);
+    color: var(--cor-clara);
+    padding: var(--espacamento-grande);
+    border-radius: var(--borda-arredondada) var(--borda-arredondada) 0 0;
+    margin-top: var(--espacamento-grande);
+    text-align: center;
+}
+
+footer h3 {
+    color: var(--cor-secundaria);
+    border-bottom: 1px solid var(--cor-secundaria);
+    display: inline-block;
+    padding-bottom: var(--espacamento-pequeno);
+    margin-bottom: var(--espacamento-medio);
+}
+
+/* Organizando o conteúdo do rodapé em 2 colunas em desktop */
+@media (min-width: 768px) {
+    footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--espacamento-grande);
+        text-align: left;
+    }
+
+    footer h3,
+    footer p:last-child {
+        grid-column: span 2;
+        text-align: center;
+    }
+}
+
+/* Estilizando a seção de redes sociais */
+.social-media {
+    margin-top: var(--espacamento-medio);
+}
+
+.social-media p {
+    color: var(--cor-secundaria);
+    font-weight: bold;
+    margin-bottom: var(--espacamento-pequeno);
+}
+
+.social-media ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espacamento-medio);
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .social-media ul {
+        justify-content: flex-start;
+    }
+}
+
+.social-media li {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: var(--borda-arredondada);
+    transition: background-color 0.3s ease;
+}
+
+.social-media li:hover {
+    background-color: var(--cor-secundaria);
+    cursor: pointer;
+}
+
+/* Estilizando o texto de copyright */
+footer p:last-child {
+    margin-top: var(--espacamento-grande);
+    padding-top: var(--espacamento-pequeno);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   MEDIA QUERIES PARA RESPONSIVIDADE
+   ========================================= */
+/* Tablets e dispositivos médios */
+@media (max-width: 991px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.7rem;
+    }
+
+    main section {
+        padding: var(--espacamento-medio);
+    }
+}
+
+/* Dispositivos móveis */
+@media (max-width: 767px) {
+    body {
+        padding: var(--espacamento-pequeno);
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    .product-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    main section {
+        margin-bottom: var(--espacamento-medio);
+        padding: var(--espacamento-medio);
+    }
+
+    #hero img {
+        max-height: 200px;
+    }
+
+    footer {
+        text-align: center;
+    }
+}
+
+/* Dispositivos muito pequenos */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    header,
+    nav,
+    main section,
+    aside,
+    footer {
+        padding: var(--espacamento-pequeno);
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    #contato button {
+        width: 100%;
+        justify-self: center;
+    }
+}
+
+/* =========================================
+   ANIMAÇÕES E EFEITOS VISUAIS
+   ========================================= */
+/* Animação de fade-in para elementos da página */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main section {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Aplicando delays diferentes para criar efeito cascata */
+main section:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+main section:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+main section:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+main section:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+main section:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+/* =========================================
+   CLASSES DE UTILIDADE
+   ========================================= */
+.destaque {
+    background-color: var(--cor-terciaria);
+    padding: var(--espacamento-pequeno);
+    border-radius: var(--borda-arredondada);
+    border-left: 3px solid var(--cor-secundaria);
+    margin: var(--espacamento-medio) 0;
+}
+
+.texto-centro {
+    text-align: center;
+}
+
+.texto-direita {
+    text-align: right;
+}
+
+.texto-destaque {
+    color: var(--cor-secundaria);
+    font-weight: bold;
+}
+
+.botao {
+    display: inline-block;
+    background-color: var(--cor-destaque);
+    color: var(--cor-clara);
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--borda-arredondada);
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.botao:hover {
+    background-color: var(--cor-secundaria);
+    text-decoration: none;
+    color: var(--cor-clara);
+}
+
+/* Classe para carregar fontes do Google depois */
+.carregar-fontes {
+    font-family: 'Playfair Display', 'Open Sans';
+    visibility: hidden;
+    position: absolute;
+    pointer-events: none;
+}
+
+/* =========================================
+   SEÇÃO HORÁRIOS DE FUNCIONAMENTO (NOVA)
+   ========================================= */
+#horarios {
+    background-color: var(--cor-terciaria);
+    border-radius: var(--borda-arredondada);
+    box-shadow: var(--sombra-suave);
+    padding: var(--espacamento-grande);
+    margin-bottom: var(--espacamento-grande);
+    text-align: center;
+}
+
+#horarios h2 {
+    color: var(--cor-primaria);
+    border-bottom: 2px solid var(--cor-primaria);
+    padding-bottom: var(--espacamento-pequeno);
+    margin-bottom: var(--espacamento-medio);
+    display: inline-block;
+}
+
+#horarios .horarios-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--espacamento-grande);
+}
+
+#horarios .horarios-lista {
+    flex: 1;
+    min-width: 280px;
+    max-width: 400px;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: var(--espacamento-medio);
+    border-radius: var(--borda-arredondada);
+    box-shadow: var(--sombra-suave);
+}
+
+#horarios ol {
+    list-style-position: inside;
+    text-align: left;
+    margin-bottom: var(--espacamento-pequeno);
+}
+
+#horarios ol li {
+    padding: var(--espacamento-pequeno) 0;
+    border-bottom: 1px dashed var(--cor-primaria);
+}
+
+#horarios ol li:last-child {
+    border-bottom: none;
+}
+
+#horarios .promocoes {
+    flex: 1;
+    min-width: 280px;
+    max-width: 400px;
+}
+
+#horarios .promocao-item {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: var(--espacamento-pequeno);
+    border-radius: var(--borda-arredondada);
+    border-left: 3px solid var(--cor-secundaria);
+    margin-bottom: var(--espacamento-pequeno);
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Responsividade para a seção de horários */
+@media (max-width: 768px) {
+    #horarios .horarios-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #horarios .horarios-lista,
+    #horarios .promocoes {
+        width: 100%;
+    }
+}
+
+/* Botão de voltar ao topo (adicionar HTML correspondente) */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-clara);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 999;
+    box-shadow: var(--sombra-media);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+/* Melhorar áreas clicáveis em mobile */
+@media (max-width: 480px) {
+
+    nav a,
+    button,
+    .social-media li {
+        padding: 0.8rem 1rem;
+        /* Aumento de área clicável */
+    }
+
+    nav ul {
+        gap: var(--espacamento-medio);
+    }
+}
+
+/* Melhorar foco para acessibilidade */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+    outline: 2px solid var(--cor-secundaria);
+    outline-offset: 3px;
+}
+
+/* Adicionar comportamento de scroll suave */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Adicionar suporte a preferências de movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.001ms !important;
+        transition-duration: 0.001ms !important;
+    }
+}
+
+/* Base para modo escuro (opcional) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --cor-primaria: #c17f42;
+        --cor-secundaria: #ffc554;
+        --cor-terciaria: #3d2e1e;
+        --cor-clara: #f0f0f0;
+        --cor-texto: #e0e0e0;
+        --cor-fundo: #1a1a1a;
+    }
+}
+
+/* Adicionar ao CSS */
+.form-feedback {
+    display: none;
+    padding: 1rem;
+    background-color: var(--cor-terciaria);
+    border-radius: var(--borda-arredondada);
+    margin-top: var(--espacamento-medio);
+    text-align: center;
+}
+
+.form-feedback.success {
+    background-color: #dff0d8;
+    color: #3c763d;
+    display: block;
+}
+
+.form-feedback.error {
+    background-color: #f2dede;
+    color: #a94442;
+    display: block;
+}
+
+@media (max-width: 768px) {
+
+    .product-item,
+    nav a,
+    .social-media li,
+    button {
+        touch-action: manipulation;
+        /* Melhora responsividade em touch */
+    }
+}

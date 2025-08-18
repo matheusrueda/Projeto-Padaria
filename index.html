@@ -79,7 +79,7 @@
 
             <div class="product-gallery">
                 <div class="product-item">
-                    <img src="images/pao.jpg" alt="Pão Fresquinho">
+                    <img src="images/pao.jpg" loading="lazy" alt="Pão Fresquinho">
                     <h3>Pão Fresquinho</h3>
                     <p>Feito diariamente com ingredientes selecionados.</p>
                 </div>
@@ -129,7 +129,9 @@
         <!-- Endereço, mapa e informações de contato -->
         <section id="localizacao">
             <h2>Localização</h2>
-            <p>Estamos localizados na Rua das Flores, 123 - Centro, Cidade XYZ.</p>
+            <p>Estamos localizados na
+            <address>Rua das Flores, 123 - Centro, Cidade XYZ.</address>
+            </p>
             <p>Venha nos visitar e experimentar nossos produtos fresquinhos!</p>
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.123456789012!2d-46.12345678901234!3d-23.123456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce123456789012%3A0x1234567890123456!2sPadaria%20P%C3%A3o%20Dourado!5e0!3m2!1spt-BR!2sbr!4v1612345678901"
@@ -155,24 +157,39 @@
                 <button type="submit">Enviar</button>
             </form>
         </section>
+
+        <!-- SEÇÃO HORÁRIOS DE FUNCIONAMENTO -->
+        <section id="horarios">
+            <h2>Horários de Funcionamento</h2>
+            <div class="horarios-container">
+                <div class="horarios-lista">
+                    <h3>Nossos Horários</h3>
+                    <ol>
+                        <li>Segunda a Sexta: 6h às 20h</li>
+                        <li>Sábado: 6h às 18h</li>
+                        <li>Domingo: 7h às 12h</li>
+                        <li>Feriados: 7h às 12h</li>
+                    </ol>
+                </div>
+
+                <div class="promocoes">
+                    <h3>Promoções da Semana</h3>
+                    <div class="promocao-item">
+                        <p>Às quartas-feiras, na compra de 3 pães franceses, ganhe 1!</p>
+                    </div>
+                    <div class="promocao-item">
+                        <p>Aos sábados, 10% de desconto em todos os bolos.</p>
+                    </div>
+                    <div class="promocao-item">
+                        <p>Happy Hour das 17h às 19h - Café com desconto de 20%!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BOTÃO VOLTAR AO TOPO -->
+        <a href="#" class="back-to-top" id="backToTop" aria-label="Voltar ao topo">↑</a>
     </main>
-
-    <!-- BARRA LATERAL -->
-    <!-- Informações adicionais, promoções ou horário de funcionamento -->
-    <aside>
-        <h2>Horário de Funcionamento</h2>
-        <!-- Lista ordenada com horários de funcionamento -->
-        <ol>
-            <li>Segunda a Sexta: 6h às 20h</li>
-            <li>Sábado: 6h às 18h</li>
-            <li>Domingo: 7h às 12h</li>
-            <li>Feriados: 7h às 12h</li>
-        </ol>
-
-        <h3>Promoções da Semana</h3>
-        <p>Às quartas-feiras, na compra de 3 pães franceses, ganhe 1!</p>
-        <p>Aos sábados, 10% de desconto em todos os bolos.</p>
-    </aside>
 
     <!-- RODAPÉ -->
     <!-- Informações de contato, redes sociais e direitos autorais -->
@@ -196,6 +213,18 @@
 
     <!-- Link para o arquivo JavaScript -->
     <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const backToTop = document.getElementById('backToTop');
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
