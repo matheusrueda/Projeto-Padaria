@@ -1,85 +1,141 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" itemscope itemtype="https://schema.org/LocalBusiness">
 
 <head>
     <!-- Definição do conjunto de caracteres para suporte completo ao português -->
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
 
     <!-- Configuração de viewport para responsividade em dispositivos móveis -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Meta tags para SEO -->
+    <!-- Meta tags essenciais para SEO -->
     <meta name="description"
-        content="A Padaria Pão Dourado oferece os melhores pães, doces e salgados da cidade. Produtos frescos feitos com ingredientes de qualidade.">
-    <meta name="keywords" content="padaria, pão, doces, salgados, café, confeitaria">
+        content="Padaria Pão Dourado - Mais de 20 anos servindo os melhores pães, doces e salgados da cidade. Produtos frescos feitos diariamente com ingredientes de qualidade e receitas tradicionais.">
+    <meta name="keywords"
+        content="padaria, pão francês, doces caseiros, salgados, café, confeitaria, pão de queijo, croissant, bolo chocolate, produtos artesanais">
     <meta name="author" content="Padaria Pão Dourado">
+    <meta name="robots" content="index,follow">
+    <meta name="language" content="pt-BR">
+    <meta name="revisit-after" content="7 days">
+    <meta name="rating" content="General">
 
-    <!-- Título da página que aparece na aba do navegador -->
-    <title>Padaria Pão Dourado - Os melhores pães da cidade</title>
+    <!-- Título otimizado para SEO -->
+    <title>Padaria Pão Dourado - Os Melhores Pães, Doces e Salgados da Cidade | Produtos Artesanais</title>
 
-    <!-- Link para o arquivo CSS externo -->
-    <link rel="stylesheet" href="css/style.css">
-    <!-- Adicionar no HEAD do HTML -->
+    <!-- Meta tags para redes sociais - Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Padaria Pão Dourado - Os Melhores Pães da Cidade">
+    <meta property="og:description"
+        content="Mais de 20 anos servindo os melhores pães, doces e salgados da cidade. Produtos frescos feitos com ingredientes de qualidade.">
+    <meta property="og:image" content="images/hero-image.jpg">
+    <meta property="og:url" content="https://padariapaodourado.com.br">
+    <meta property="og:site_name" content="Padaria Pão Dourado">
+    <meta property="og:locale" content="pt_BR">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Padaria Pão Dourado - Os Melhores Pães da Cidade">
+    <meta name="twitter:description" content="Mais de 20 anos servindo os melhores pães, doces e salgados da cidade.">
+    <meta name="twitter:image" content="images/hero-image.jpg">
+
+    <!-- Schema.org markup para negócio local -->
+    <meta itemprop="name" content="Padaria Pão Dourado">
+    <meta itemprop="description"
+        content="Padaria artesanal com mais de 20 anos de tradição, oferecendo pães, doces e salgados frescos diariamente.">
+    <meta itemprop="image" content="images/hero-image.jpg">
+    <meta itemprop="telephone" content="(00) 1234-5678">
+    <meta itemprop="address" content="Rua das Flores, 123 - Centro, Cidade XYZ">
+
+    <!-- Theme color para browsers -->
+    <meta name="theme-color" content="#8B4513">
+    <meta name="msapplication-navbutton-color" content="#8B4513">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Performance e otimização -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.google.com">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" href="icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <!-- Manifest para PWA -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Preload de recursos críticos -->
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="js/main.js" as="script">
+
+    <!-- Fonts otimizadas com display=swap -->
     <link
         href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Playfair+Display:wght@400;700&display=swap"
         rel="stylesheet">
+
+    <!-- Link para o arquivo CSS externo -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://padariapaodourado.com.br">
 </head>
 
 <body>
     <!-- CABEÇALHO DA PÁGINA -->
     <!-- Esta seção conterá o logo, nome da padaria e menu de navegação -->
-    <header>
+    <header role="banner">
         <div class="header-container">
             <!-- Logo e nome da padaria -->
             <div class="logo-container">
-                <h1>Padaria Pão Dourado</h1>
+                <h1 itemprop="name">Padaria Pão Dourado</h1>
             </div>
 
             <!-- NAVEGAÇÃO PRINCIPAL agora dentro do header -->
-            <nav>
+            <nav role="navigation" aria-label="Menu principal">
                 <ul>
-                    <li><a href="#produtos">Produtos</a></li>
-                    <li><a href="#sobre-nos">Sobre Nós</a></li>
-                    <li><a href="#diferenciais">Nossos Diferenciais</a></li>
-                    <li><a href="#horarios">Horários</a></li>
-                    <li><a href="#localizacao">Localização</a></li>
-                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="#produtos" aria-describedby="produtos-desc">Produtos</a></li>
+                    <li><a href="#sobre-nos" aria-describedby="sobre-desc">Sobre Nós</a></li>
+                    <li><a href="#diferenciais" aria-describedby="diferenciais-desc">Nossos Diferenciais</a></li>
+                    <li><a href="#horarios" aria-describedby="horarios-desc">Horários</a></li>
+                    <li><a href="#localizacao" aria-describedby="localizacao-desc">Localização</a></li>
+                    <li><a href="#contato" aria-describedby="contato-desc">Contato</a></li>
                 </ul>
             </nav>
         </div>
 
         <!-- Mensagem de boas-vindas abaixo do menu -->
         <div class="header-welcome">
-            <p>Mais de 20 anos servidos os melhores pães, doces e salgados da cidade!</p>
+            <p><strong>Mais de 20 anos</strong> servindo os melhores pães, doces e salgados da cidade!</p>
         </div>
     </header>
 
     <!-- CONTEÚDO PRINCIPAL -->
     <!-- Área principal onde será exibido o conteúdo das diferentes páginas -->
-    <main>
+    <main role="main">
         <!-- SEÇÃO HERO/DESTAQUE -->
         <!-- Imagem principal e chamada de destaque -->
-        <section id="hero">
-            <h2>Descubra o Sabor do Nosso Pão</h2>
-            <p>Venha experimentar nossos pães fresquinhos, feitos com receitas tradicionais e ingredientes de qualidade.
-            </p>
+        <section id="hero" role="banner" aria-labelledby="hero-title">
+            <h2 id="hero-title">Descubra o Sabor do Nosso Pão</h2>
+            <p class="hero-subtitle">Venha experimentar nossos pães fresquinhos, feitos com receitas tradicionais e
+                ingredientes de qualidade.</p>
+
             <div class="hero-image-container">
-                <img src="images/hero-image.jpg" alt="Imagem de destaque da padaria" class="hero-image" loading="lazy">
+                <img src="images/hero-image.jpg"
+                    alt="Pães artesanais dourados e frescos expostos na vitrine da Padaria Pão Dourado, mostrando a variedade e qualidade dos produtos"
+                    class="hero-image" loading="lazy" width="800" height="450">
             </div>
         </section>
 
         <!-- SEÇÃO PRODUTOS -->
         <!-- Galeria de produtos: pães, doces, salgados, bebidas -->
-        <section id="produtos">
-            <h2>Nossos Produtos</h2>
-            <p>Conheça nossa variedade de produtos artesanais, feitos diariamente com ingredientes de primeira
-                qualidade.</p>
+        <section id="produtos" aria-labelledby="produtos-title" itemscope itemtype="https://schema.org/ItemList">
+            <h2 id="produtos-title" itemprop="name">Nossos Produtos</h2>
+            <p itemprop="description">Conheça nossa variedade de produtos artesanais, feitos diariamente com
+                ingredientes de primeira qualidade.</p>
 
             <!-- Lista não ordenada com pelo menos 5 produtos -->
             <h3>Principais Produtos:</h3>
-            <ul>
+            <ul role="list" aria-label="Lista de produtos principais">
                 <li>Pão Francês Tradicional</li>
                 <li>Croissant de Manteiga</li>
                 <li>Bolo de Chocolate</li>
@@ -88,22 +144,30 @@
                 <li>Doces Caseiros Variados</li>
             </ul>
 
-            <div class="product-gallery">
-                <div class="product-item">
-                    <img src="images/pao.jpg" loading="lazy" alt="Pão Fresquinho">
-                    <h3>Pão Fresquinho</h3>
-                    <p>Feito diariamente com ingredientes selecionados.</p>
-                </div>
-                <div class="product-item">
-                    <img src="images/doce.jpg" loading="lazy" alt="Doce Caseiro">
-                    <h3>Doce Caseiro</h3>
-                    <p>Deliciosos doces feitos com receitas tradicionais.</p>
-                </div>
-                <div class="product-item">
-                    <img src="images/salgado.jpg" loading="lazy" alt="Salgado Assado">
-                    <h3>Salgado Assado</h3>
-                    <p>Perfeito para um lanche rápido e saboroso.</p>
-                </div>
+            <div class="product-gallery" role="region" aria-label="Galeria de produtos em destaque">
+                <article class="product-item" itemscope itemtype="https://schema.org/Product">
+                    <img src="images/pao.jpg" loading="lazy"
+                        alt="Pães franceses dourados e crocantes, recém-saídos do forno, exibindo textura perfeita"
+                        itemprop="image" width="300" height="200">
+                    <h3 itemprop="name">Pão Fresquinho</h3>
+                    <p itemprop="description">Feito diariamente com ingredientes selecionados.</p>
+                </article>
+
+                <article class="product-item" itemscope itemtype="https://schema.org/Product">
+                    <img src="images/doce.jpg" loading="lazy"
+                        alt="Doces caseiros variados incluindo brigadeiros, beijinhos e quindim, dispostos de forma atrativa"
+                        itemprop="image" width="300" height="200">
+                    <h3 itemprop="name">Doce Caseiro</h3>
+                    <p itemprop="description">Deliciosos doces feitos com receitas tradicionais.</p>
+                </article>
+
+                <article class="product-item" itemscope itemtype="https://schema.org/Product">
+                    <img src="images/salgado.jpg" loading="lazy"
+                        alt="Salgados assados variados como coxinha, pastel de queijo e empada, com aparência dourada e apetitosa"
+                        itemprop="image" width="300" height="200">
+                    <h3 itemprop="name">Salgado Assado</h3>
+                    <p itemprop="description">Perfeito para um lanche rápido e saboroso.</p>
+                </article>
             </div>
         </section>
 
@@ -167,63 +231,214 @@
 
         <!-- SEÇÃO LOCALIZAÇÃO -->
         <!-- Endereço, mapa e informações de contato -->
-        <section id="localizacao">
+        <section id="localizacao" itemscope itemtype="https://schema.org/PostalAddress">
             <h2>Localização</h2>
             <p>Estamos localizados na
-            <address>Rua das Flores, 123 - Centro, Cidade XYZ.</address>
+            <address itemprop="streetAddress">
+                <span itemprop="streetAddress">Rua das Flores, 123</span> -
+                <span itemprop="addressLocality">Centro</span>,
+                <span itemprop="addressLocality">Cidade XYZ</span>
+            </address>
             </p>
             <p>Venha nos visitar e experimentar nossos produtos fresquinhos!</p>
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.123456789012!2d-46.12345678901234!3d-23.123456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce123456789012%3A0x1234567890123456!2sPadaria%20P%C3%A3o%20Dourado!5e0!3m2!1spt-BR!2sbr!4v1612345678901"
-                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+            <!-- Mapa responsivo -->
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.123456789012!2d-46.12345678901234!3d-23.123456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce123456789012%3A0x1234567890123456!2sPadaria%20P%C3%A3o%20Dourado!5e0!3m2!1spt-BR!2sbr!4v1612345678901"
+                    width="600" height="450" loading="lazy" allowfullscreen
+                    title="Localização da Padaria Pão Dourado - Rua das Flores, 123, Centro"
+                    aria-label="Mapa mostrando a localização da Padaria Pão Dourado">
+                </iframe>
+            </div>
         </section>
 
         <!-- SEÇÃO CONTATO -->
         <!-- Formulário de contato para feedback e sugestões -->
-        <section id="contato">
-            <h2>Contato</h2>
+        <section id="contato" aria-labelledby="contato-title">
+            <h2 id="contato-title">Contato</h2>
             <p>Tem dúvidas, sugestões ou gostaria de fazer uma encomenda? Entre em contato conosco!</p>
 
-            <form action="#" method="post">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" required>
+            <form action="#" method="post" novalidate aria-label="Formulário de contato">
+                <div class="form-group">
+                    <label for="nome">Nome: <span class="required" aria-label="Campo obrigatório">*</span></label>
+                    <input type="text" id="nome" name="nome" required aria-describedby="nome-error"
+                        autocomplete="given-name" placeholder="Digite seu nome completo">
+                    <span id="nome-error" class="error-message" role="alert" aria-live="polite"></span>
+                </div>
 
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required>
+                <div class="form-group">
+                    <label for="email">E-mail: <span class="required" aria-label="Campo obrigatório">*</span></label>
+                    <input type="email" id="email" name="email" required aria-describedby="email-error"
+                        autocomplete="email" placeholder="seu.email@exemplo.com">
+                    <span id="email-error" class="error-message" role="alert" aria-live="polite"></span>
+                </div>
 
-                <label for="mensagem">Mensagem:</label>
-                <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+                <div class="form-group">
+                    <label for="telefone">Telefone: <span class="optional">(opcional)</span></label>
+                    <input type="tel" id="telefone" name="telefone" autocomplete="tel" placeholder="(XX) XXXXX-XXXX">
+                </div>
 
-                <button type="submit">Enviar</button>
+                <div class="form-group">
+                    <label for="mensagem">Mensagem: <span class="required"
+                            aria-label="Campo obrigatório">*</span></label>
+                    <textarea id="mensagem" name="mensagem" rows="5" required
+                        aria-describedby="mensagem-error mensagem-help"
+                        placeholder="Digite sua mensagem, sugestão ou pedido de encomenda">
+                    </textarea>
+                    <span id="mensagem-help" class="help-text">Máximo de 500 caracteres</span>
+                    <span id="mensagem-error" class="error-message" role="alert" aria-live="polite"></span>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" aria-describedby="submit-help">
+                        <span class="button-text">Enviar Mensagem</span>
+                        <span class="button-icon" aria-hidden="true">✉</span>
+                    </button>
+                    <p id="submit-help" class="help-text">Responderemos em até 24 horas</p>
+                </div>
             </form>
         </section>
 
         <!-- BOTÃO VOLTAR AO TOPO -->
-        <a href="#" class="back-to-top" id="backToTop" aria-label="Voltar ao topo">↑</a>
+        <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo da página" title="Voltar ao topo">
+            <span aria-hidden="true">↑</span>
+            <span class="sr-only">Voltar ao topo</span>
+        </button>
     </main>
 
     <!-- RODAPÉ -->
     <!-- Informações de contato, redes sociais e direitos autorais -->
-    <footer>
-        <h3>Padaria Pão Dourado</h3>
-        <p>Rua das Flores, 123 - Centro, Cidade XYZ</p>
-        <p>Telefone: (00) 1234-5678 | WhatsApp: (00) 98765-4321</p>
-        <p>Email: contato@paodourado.com.br</p>
+    <footer role="contentinfo" itemscope itemtype="https://schema.org/LocalBusiness">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 itemprop="name">Padaria Pão Dourado</h3>
+                <address itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                    <span itemprop="streetAddress">Rua das Flores, 123</span><br>
+                    <span itemprop="addressLocality">Centro</span>, <span itemprop="addressRegion">Cidade XYZ</span>
+                </address>
+            </div>
 
-        <div class="social-media">
-            <p>Siga-nos nas redes sociais:</p>
-            <ul>
-                <li>Instagram: @paodourado</li>
-                <li>Facebook: /padariapaodourado</li>
-                <li>Twitter: @paodouradooficial</li>
-            </ul>
+            <div class="footer-section">
+                <h3>Contatos</h3>
+                <p>
+                    <span itemprop="telephone">Telefone: (00) 1234-5678</span><br>
+                    <span>WhatsApp: (00) 98765-4321</span><br>
+                    <span itemprop="email">Email: contato@paodourado.com.br</span>
+                </p>
+            </div>
+
+            <div class="footer-section social-media">
+                <h3>Siga-nos nas redes sociais</h3>
+                <ul role="list" aria-label="Links para redes sociais">
+                    <li><a href="https://instagram.com/paodourado" target="_blank" rel="noopener noreferrer"
+                            aria-label="Siga-nos no Instagram">Instagram: @paodourado</a></li>
+                    <li><a href="https://facebook.com/padariapaodourado" target="_blank" rel="noopener noreferrer"
+                            aria-label="Siga-nos no Facebook">Facebook: /padariapaodourado</a></li>
+                    <li><a href="https://twitter.com/paodouradooficial" target="_blank" rel="noopener noreferrer"
+                            aria-label="Siga-nos no Twitter">Twitter: @paodouradooficial</a></li>
+                </ul>
+            </div>
         </div>
 
-        <p>&copy; 2025 Padaria Pão Dourado. Todos os direitos reservados.</p>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Padaria Pão Dourado. Todos os direitos reservados.</p>
+            <p>
+                <a href="#privacy" aria-label="Política de privacidade">Política de Privacidade</a> |
+                <a href="#terms" aria-label="Termos de uso">Termos de Uso</a>
+            </p>
+        </div>
     </footer>
 
     <!-- Link para o arquivo JavaScript -->
     <script src="js/main.js"></script>
+
+    <!-- Dados estruturados JSON-LD para SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Bakery",
+        "@id": "https://padariapaodourado.com.br",
+        "name": "Padaria Pão Dourado",
+        "description": "Padaria artesanal com mais de 20 anos de tradição, oferecendo pães, doces e salgados frescos diariamente.",
+        "image": [
+            "https://padariapaodourado.com.br/images/hero-image.jpg",
+            "https://padariapaodourado.com.br/images/pao.jpg",
+            "https://padariapaodourado.com.br/images/doce.jpg",
+            "https://padariapaodourado.com.br/images/salgado.jpg"
+        ],
+        "telephone": "(00) 1234-5678",
+        "email": "contato@paodourado.com.br",
+        "url": "https://padariapaodourado.com.br",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Rua das Flores, 123",
+            "addressLocality": "Centro",
+            "addressRegion": "Cidade XYZ",
+            "addressCountry": "BR"
+        },
+        "openingHours": [
+            "Mo-Fr 06:00-20:00",
+            "Sa 06:00-18:00", 
+            "Su 07:00-12:00"
+        ],
+        "servesCuisine": "Brazilian",
+        "foundingDate": "2003",
+        "priceRange": "$$",
+        "sameAs": [
+            "https://instagram.com/paodourado",
+            "https://facebook.com/padariapaodourado",
+            "https://twitter.com/paodouradooficial"
+        ],
+        "hasMenu": {
+            "@type": "Menu",
+            "hasMenuSection": [
+                {
+                    "@type": "MenuSection",
+                    "name": "Pães",
+                    "hasMenuItem": [
+                        {
+                            "@type": "MenuItem",
+                            "name": "Pão Francês Tradicional"
+                        },
+                        {
+                            "@type": "MenuItem", 
+                            "name": "Croissant de Manteiga"
+                        },
+                        {
+                            "@type": "MenuItem",
+                            "name": "Pão de Queijo Mineiro"
+                        }
+                    ]
+                },
+                {
+                    "@type": "MenuSection",
+                    "name": "Doces",
+                    "hasMenuItem": [
+                        {
+                            "@type": "MenuItem",
+                            "name": "Bolo de Chocolate"
+                        },
+                        {
+                            "@type": "MenuItem",
+                            "name": "Doces Caseiros Variados"
+                        }
+                    ]
+                },
+                {
+                    "@type": "MenuSection",
+                    "name": "Salgados",
+                    "hasMenuItem": [
+                        {
+                            "@type": "MenuItem",
+                            "name": "Torta Salgada de Frango"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+    </script>
 </body>
 
 </html>

@@ -201,31 +201,31 @@ class PadariaApp          // Orquestração geral da aplicação
 <div align="center">
 
 ### **🚀 PERFORMANCE OTIMIZADA**
-| Feature | Implementação |
-|---------|---------------|
-| **Lazy Loading** | Intersection Observer nativo |
-| **Image Optimization** | Aspect-ratio e object-fit moderno |
-| **Code Splitting** | Modules ES6+ organizados |
-| **Cache Strategy** | Service Worker com múltiplas estratégias |
-| **Bundle Size** | Código otimizado sem dependências externas |
+| Feature                | Implementação                              |
+| ---------------------- | ------------------------------------------ |
+| **Lazy Loading**       | Intersection Observer nativo               |
+| **Image Optimization** | Aspect-ratio e object-fit moderno          |
+| **Code Splitting**     | Modules ES6+ organizados                   |
+| **Cache Strategy**     | Service Worker com múltiplas estratégias   |
+| **Bundle Size**        | Código otimizado sem dependências externas |
 
 ### **♿ ACESSIBILIDADE WCAG 2.1**
-| Feature | Nível |
-|---------|-------|
-| **Screen Readers** | AAA |
-| **Keyboard Navigation** | AAA |
-| **Color Contrast** | AA |
-| **Focus Management** | AAA |
-| **ARIA Labels** | Completo |
+| Feature                 | Nível    |
+| ----------------------- | -------- |
+| **Screen Readers**      | AAA      |
+| **Keyboard Navigation** | AAA      |
+| **Color Contrast**      | AA       |
+| **Focus Management**    | AAA      |
+| **ARIA Labels**         | Completo |
 
 ### **📱 PWA COMPLETA**
-| Feature | Status |
-|---------|--------|
-| **App Installable** | ✅ |
-| **Offline Support** | ✅ |
-| **Background Sync** | ✅ |
-| **Push Notifications** | ✅ |
-| **App Shell** | ✅ |
+| Feature                | Status |
+| ---------------------- | ------ |
+| **App Installable**    | ✅      |
+| **Offline Support**    | ✅      |
+| **Background Sync**    | ✅      |
+| **Push Notifications** | ✅      |
+| **App Shell**          | ✅      |
 
 </div>
 
@@ -373,16 +373,16 @@ class NavigationManager {
 
 ### **ANTES vs DEPOIS**
 
-| Aspecto | Versão 1.0 | Versão 2.0 ✨ |
-|---------|-------------|---------------|
-| **CSS** | ~500 linhas básicas | **2000+ linhas** com design system |
-| **JavaScript** | ~200 linhas procedural | **1500+ linhas** OOP ES6+ |
-| **HTML** | Básico | **Semantic + Schema.org + PWA** |
-| **Performance** | Básica | **Web Vitals + Service Worker** |
-| **Acessibilidade** | Limitada | **WCAG 2.1 AAA compliant** |
-| **Responsividade** | Media queries simples | **CSS Grid + Fluid Typography** |
-| **SEO** | Básico | **Rich Snippets + Meta tags** |
-| **UX** | Estático | **Micro-interactions + Animations** |
+| Aspecto            | Versão 1.0             | Versão 2.0 ✨                        |
+| ------------------ | ---------------------- | ----------------------------------- |
+| **CSS**            | ~500 linhas básicas    | **2000+ linhas** com design system  |
+| **JavaScript**     | ~200 linhas procedural | **1500+ linhas** OOP ES6+           |
+| **HTML**           | Básico                 | **Semantic + Schema.org + PWA**     |
+| **Performance**    | Básica                 | **Web Vitals + Service Worker**     |
+| **Acessibilidade** | Limitada               | **WCAG 2.1 AAA compliant**          |
+| **Responsividade** | Media queries simples  | **CSS Grid + Fluid Typography**     |
+| **SEO**            | Básico                 | **Rich Snippets + Meta tags**       |
+| **UX**             | Estático               | **Micro-interactions + Animations** |
 
 </div>
 
@@ -453,14 +453,14 @@ npx http-server .
   
 ### **🎯 CERTIFICAÇÃO DE QUALIDADE**
 
-| Métrica | Score | Validação |
-|---------|-------|-----------|
-| **Web Vitals LCP** | < 2.5s | ✅ |
-| **Web Vitals FID** | < 100ms | ✅ |
-| **Web Vitals CLS** | < 0.1 | ✅ |
-| **Accessibility** | 100/100 | ✅ |
-| **Performance** | 95+/100 | ✅ |
-| **SEO** | 100/100 | ✅ |
+| Métrica            | Score   | Validação |
+| ------------------ | ------- | --------- |
+| **Web Vitals LCP** | < 2.5s  | ✅         |
+| **Web Vitals FID** | < 100ms | ✅         |
+| **Web Vitals CLS** | < 0.1   | ✅         |
+| **Accessibility**  | 100/100 | ✅         |
+| **Performance**    | 95+/100 | ✅         |
+| **SEO**            | 100/100 | ✅         |
 
 </div>
 
