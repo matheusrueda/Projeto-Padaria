@@ -98,19 +98,25 @@ Esta versão representa uma **revolução completa** do projeto original, aplica
 </tr>
 </table>
 
-<!-- Links rápidos de navegação -->
-<p align="center">
-  <a href="#-sobre-o-projeto">📚 Sobre</a> • 
-  <a href="#-arquitetura-moderna">🏗️ Arquitetura</a> • 
-  <a href="#-demonstração">👀 Demo</a> • 
-  <a href="#-funcionalidades-avançadas">⚡ Features</a> • 
-  <a href="#-tecnologias">🛠️ Tech Stack</a> • 
-  <a href="#-como-executar">📋 Setup</a> • 
-  <a href="#-best-practices">✨ Best Practices</a>
-</p>
+## 📑 Índice
+
+- 📚 [Sobre o Projeto](#sobre-o-projeto)
+- 🏗️ [Arquitetura Moderna](#arquitetura-moderna)
+- 👀 [Demonstração](#demonstracao)
+- ⚡ [Funcionalidades Avançadas](#funcionalidades-avancadas)
+- 🛠️ [Stack Tecnológica Moderna](#stack-tecnologica-moderna)
+- ✨ [Best Practices Implementadas](#best-practices-implementadas)
+- 🎯 [Melhorias Específicas da v2.0](#melhorias-especificas-da-v20)
+- 🔜 [Roadmap Futuro](#roadmap-futuro)
+- 📋 [Como Executar](#como-executar)
+- 📄 [Documentos](#documentos)
+- 🏆 [Conquistas Técnicas](#conquistas-tecnicas)
+- 👨‍🎓 [Contexto Educacional](#contexto-educacional)
+- 📝 [Changelog](#changelog-2025-09-03)
 
 <br>
 
+<a id="sobre-o-projeto"></a>
 ## 📚 Sobre o Projeto
 
 Este projeto evoluiu de um simples site de padaria para uma **aplicação web moderna e completa**, demonstrando proficiência em tecnologias web atuais. A versão 2.0 implementa um **sistema de design robusto**, **arquitetura escalável** e **experiência de usuário excepcional**.
@@ -133,11 +139,12 @@ Aplicação dos **Laws of UX** para uma experiência otimizada:
 
 <br>
 
+<a id="arquitetura-moderna"></a>
 ## 🏗️ Arquitetura Moderna
 
 ### **Estrutura de Arquivos Otimizada:**
 
-```
+```text
 Projeto Padaria/
 │
 ├── index.html              # HTML5 semântico com Schema.org
@@ -177,6 +184,7 @@ class PadariaApp          // Orquestração geral da aplicação
 
 <br>
 
+<a id="demonstracao"></a>
 ## 👀 Demonstração
 
 <div align="center">
@@ -196,41 +204,43 @@ class PadariaApp          // Orquestração geral da aplicação
 
 <br>
 
+<a id="funcionalidades-avancadas"></a>
 ## ⚡ Funcionalidades Avançadas
 
 <div align="center">
 
 ### **🚀 PERFORMANCE OTIMIZADA**
-| Feature | Implementação |
-|---------|---------------|
-| **Lazy Loading** | Intersection Observer nativo |
-| **Image Optimization** | Aspect-ratio e object-fit moderno |
-| **Code Splitting** | Modules ES6+ organizados |
-| **Cache Strategy** | Service Worker com múltiplas estratégias |
-| **Bundle Size** | Código otimizado sem dependências externas |
+| Feature                | Implementação                              |
+| ---------------------- | ------------------------------------------ |
+| **Lazy Loading**       | Intersection Observer nativo               |
+| **Image Optimization** | Aspect-ratio e object-fit moderno          |
+| **Code Splitting**     | Modules ES6+ organizados                   |
+| **Cache Strategy**     | Service Worker com múltiplas estratégias   |
+| **Bundle Size**        | Código otimizado sem dependências externas |
 
 ### **♿ ACESSIBILIDADE WCAG 2.1**
-| Feature | Nível |
-|---------|-------|
-| **Screen Readers** | AAA |
-| **Keyboard Navigation** | AAA |
-| **Color Contrast** | AA |
-| **Focus Management** | AAA |
-| **ARIA Labels** | Completo |
+| Feature                 | Nível    |
+| ----------------------- | -------- |
+| **Screen Readers**      | AAA      |
+| **Keyboard Navigation** | AAA      |
+| **Color Contrast**      | AA       |
+| **Focus Management**    | AAA      |
+| **ARIA Labels**         | Completo |
 
 ### **📱 PWA COMPLETA**
-| Feature | Status |
-|---------|--------|
-| **App Installable** | ✅ |
-| **Offline Support** | ✅ |
-| **Background Sync** | ✅ |
-| **Push Notifications** | ✅ |
-| **App Shell** | ✅ |
+| Feature                | Status |
+| ---------------------- | ------ |
+| **App Installable**    | ✅      |
+| **Offline Support**    | ✅      |
+| **Background Sync**    | ✅      |
+| **Push Notifications** | ✅      |
+| **App Shell**          | ✅      |
 
 </div>
 
 <br>
 
+<a id="stack-tecnologica-moderna"></a>
 ## 🛠️ Stack Tecnológica Moderna
 
 <div align="center">
@@ -301,6 +311,7 @@ class PadariaApp          // Orquestração geral da aplicação
 
 <br>
 
+<a id="best-practices-implementadas"></a>
 ## ✨ Best Practices Implementadas
 
 ### **🎯 Airbnb JavaScript Style Guide**
@@ -367,22 +378,23 @@ class NavigationManager {
 
 <br>
 
+<a id="melhorias-especificas-da-v20"></a>
 ## 🎯 Melhorias Específicas da v2.0
 
 <div align="center">
 
 ### **ANTES vs DEPOIS**
 
-| Aspecto | Versão 1.0 | Versão 2.0 ✨ |
-|---------|-------------|---------------|
-| **CSS** | ~500 linhas básicas | **2000+ linhas** com design system |
-| **JavaScript** | ~200 linhas procedural | **1500+ linhas** OOP ES6+ |
-| **HTML** | Básico | **Semantic + Schema.org + PWA** |
-| **Performance** | Básica | **Web Vitals + Service Worker** |
-| **Acessibilidade** | Limitada | **WCAG 2.1 AAA compliant** |
-| **Responsividade** | Media queries simples | **CSS Grid + Fluid Typography** |
-| **SEO** | Básico | **Rich Snippets + Meta tags** |
-| **UX** | Estático | **Micro-interactions + Animations** |
+| Aspecto            | Versão 1.0             | Versão 2.0 ✨                        |
+| ------------------ | ---------------------- | ----------------------------------- |
+| **CSS**            | ~500 linhas básicas    | **2000+ linhas** com design system  |
+| **JavaScript**     | ~200 linhas procedural | **1500+ linhas** OOP ES6+           |
+| **HTML**           | Básico                 | **Semantic + Schema.org + PWA**     |
+| **Performance**    | Básica                 | **Web Vitals + Service Worker**     |
+| **Acessibilidade** | Limitada               | **WCAG 2.1 AAA compliant**          |
+| **Responsividade** | Media queries simples  | **CSS Grid + Fluid Typography**     |
+| **SEO**            | Básico                 | **Rich Snippets + Meta tags**       |
+| **UX**             | Estático               | **Micro-interactions + Animations** |
 
 </div>
 
@@ -396,6 +408,7 @@ class NavigationManager {
 
 <br>
 
+<a id="roadmap-futuro"></a>
 ## 🔜 Roadmap Futuro
 
 ### **Phase 3.0 - Advanced Features**
@@ -413,6 +426,7 @@ class NavigationManager {
 
 <br>
 
+<a id="como-executar"></a>
 ## 📋 Como Executar
 
 ### **Opção 1: Execução Simples**
@@ -447,20 +461,27 @@ npx http-server .
 
 <br>
 
+<a id="documentos"></a>
+## 📄 Documentos
+
+- [DEBUG_REPORT.md](./DEBUG_REPORT.md) — Auditoria técnica Context7, achados e pendências
+- [DESIGN-SYSTEM-HARMONIZADO.md](./DESIGN-SYSTEM-HARMONIZADO.md) — Guia do design system e tokens
+
+<a id="conquistas-tecnicas"></a>
 ## 🏆 Conquistas Técnicas
 
 <div align="center">
   
 ### **🎯 CERTIFICAÇÃO DE QUALIDADE**
 
-| Métrica | Score | Validação |
-|---------|-------|-----------|
-| **Web Vitals LCP** | < 2.5s | ✅ |
-| **Web Vitals FID** | < 100ms | ✅ |
-| **Web Vitals CLS** | < 0.1 | ✅ |
-| **Accessibility** | 100/100 | ✅ |
-| **Performance** | 95+/100 | ✅ |
-| **SEO** | 100/100 | ✅ |
+| Métrica            | Score   | Validação |
+| ------------------ | ------- | --------- |
+| **Web Vitals LCP** | < 2.5s  | ✅         |
+| **Web Vitals FID** | < 100ms | ✅         |
+| **Web Vitals CLS** | < 0.1   | ✅         |
+| **Accessibility**  | 100/100 | ✅         |
+| **Performance**    | 95+/100 | ✅         |
+| **SEO**            | 100/100 | ✅         |
 
 </div>
 
@@ -474,6 +495,7 @@ npx http-server .
 
 <br>
 
+<a id="contexto-educacional"></a>
 ## 👨‍🎓 Contexto Educacional
 
 Esta **versão 2.0** representa um salto qualitativo significativo, demonstrando:
@@ -517,3 +539,5 @@ Este projeto é uma **demonstração técnica independente** criada por **Matheu
 **Por Matheus Rueda • 2025**
 
 </div>
+
+

@@ -33,6 +33,10 @@ const SELECTORS = {
   heroImage: '.hero-image',
   productItems: '.product-item',
   formFeedback: '.form-feedback',
+  // Seletores da tabela de preços
+  categoryTabs: '.category-tab',
+  pricingPanels: '.pricing-panel',
+  pricingTable: '.pricing-table',
 };
 
 const CSS_CLASSES = {
@@ -98,7 +102,7 @@ const Utils = {
    */
   smoothScrollTo(element, offset = 0) {
     if (!element) return;
-    
+
     const targetPosition = element.offsetTop - offset;
     const startPosition = window.pageYOffset;
     const distance = targetPosition - startPosition;
@@ -200,7 +204,7 @@ class NavigationManager {
     this.sections = document.querySelectorAll(SELECTORS.sections);
     this.currentSection = '';
     this.isScrolling = false;
-    
+
     this.init();
   }
 
@@ -217,7 +221,7 @@ class NavigationManager {
     this.setupClickHandlers();
     this.setupKeyboardNavigation();
     this.setupIntersectionObserver();
-    
+
     // Chama uma vez para definir estado inicial
     this.updateActiveNavigation();
   }
@@ -293,7 +297,7 @@ class NavigationManager {
     this.sections.forEach((section) => {
       const sectionTop = section.offsetTop - headerOffset;
       const sectionHeight = section.offsetHeight;
-      
+
       if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
         newCurrentSection = section.id;
       }
@@ -312,9 +316,9 @@ class NavigationManager {
     this.navLinks.forEach((link) => {
       const href = link.getAttribute('href');
       const targetId = href ? href.substring(1) : '';
-      
+
       link.classList.toggle(CSS_CLASSES.active, targetId === this.currentSection);
-      
+
       // Atualiza ARIA para acessibilidade
       link.setAttribute('aria-current', targetId === this.currentSection ? 'true' : 'false');
     });
@@ -332,7 +336,7 @@ class NavigationManager {
       if (targetSection) {
         this.isScrolling = true;
         Utils.smoothScrollTo(targetSection, Utils.getHeaderOffset());
-        
+
         // Foco no elemento alvo para acessibilidade
         setTimeout(() => {
           targetSection.focus({ preventScroll: true });
@@ -381,7 +385,7 @@ class BackToTopButton {
   constructor() {
     this.button = document.querySelector(SELECTORS.backToTop);
     this.isVisible = false;
-    
+
     this.init();
   }
 
@@ -410,7 +414,7 @@ class BackToTopButton {
     this.button.innerHTML = '↑';
     this.button.setAttribute('title', ARIA_LABELS.backToTop);
     this.button.setAttribute('aria-label', ARIA_LABELS.backToTop);
-    
+
     document.body.appendChild(this.button);
   }
 
@@ -453,11 +457,11 @@ class BackToTopButton {
    */
   handleScroll() {
     const shouldShow = window.pageYOffset > APP_CONFIG.BACK_TO_TOP_THRESHOLD;
-    
+
     if (shouldShow !== this.isVisible) {
       this.isVisible = shouldShow;
       this.button.classList.toggle(CSS_CLASSES.visible, shouldShow);
-      
+
       // Atualiza acessibilidade
       this.button.setAttribute('aria-hidden', shouldShow ? 'false' : 'true');
     }
@@ -469,7 +473,7 @@ class BackToTopButton {
   scrollToTop() {
     try {
       Utils.smoothScrollTo(document.body, 0);
-      
+
       // Foco no primeiro elemento navegável
       setTimeout(() => {
         const firstFocusable = document.querySelector('a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])');
@@ -509,7 +513,7 @@ class FormManager {
   constructor() {
     this.forms = document.querySelectorAll('form');
     this.contactForm = document.querySelector(SELECTORS.contactForm);
-    
+
     this.init();
   }
 
@@ -520,7 +524,7 @@ class FormManager {
     if (this.contactForm) {
       this.setupContactForm();
     }
-    
+
     this.setupFormValidation();
   }
 
@@ -561,7 +565,7 @@ class FormManager {
     try {
       // Remove feedback anterior
       this.removeFeedback();
-      
+
       // Valida formulário
       if (!this.validateForm(this.contactForm)) {
         this.showFeedback('Por favor, corrija os erros antes de enviar.', 'error');
@@ -575,7 +579,7 @@ class FormManager {
       if (result.success) {
         this.showFeedback('Obrigado pelo seu contato! Mensagem enviada com sucesso.', 'success');
         this.contactForm.reset();
-        
+
         // Analytics tracking
         this.trackFormSubmission('contact', 'success');
       } else {
@@ -610,7 +614,7 @@ class FormManager {
   validateForm(form) {
     let isValid = true;
     const inputs = form.querySelectorAll('input[required], textarea[required], select[required]');
-    
+
     inputs.forEach((input) => {
       if (!this.validateField(input)) {
         isValid = false;
@@ -693,12 +697,12 @@ class FormManager {
   showFieldError(field, message) {
     field.classList.add('error');
     field.setAttribute('aria-invalid', 'true');
-    
+
     const errorElement = document.createElement('span');
     errorElement.className = 'error-message';
     errorElement.textContent = message;
     errorElement.setAttribute('role', 'alert');
-    
+
     field.parentNode.appendChild(errorElement);
   }
 
@@ -709,7 +713,7 @@ class FormManager {
   clearFieldError(field) {
     field.classList.remove('error');
     field.setAttribute('aria-invalid', 'false');
-    
+
     const errorElement = field.parentNode.querySelector('.error-message');
     if (errorElement) {
       errorElement.remove();
@@ -723,15 +727,15 @@ class FormManager {
    */
   showFeedback(message, type = 'success') {
     this.removeFeedback();
-    
+
     const feedbackElement = document.createElement('div');
     feedbackElement.className = `form-feedback ${type}`;
     feedbackElement.textContent = Utils.sanitizeString(message);
     feedbackElement.setAttribute('role', 'alert');
     feedbackElement.setAttribute('aria-live', 'polite');
-    
+
     this.contactForm.insertBefore(feedbackElement, this.contactForm.firstChild);
-    
+
     // Auto-remove feedback após tempo configurado
     if (type === 'success') {
       setTimeout(() => {
@@ -793,14 +797,14 @@ class AnimationManager {
    */
   setupScrollAnimations() {
     const animatedElements = document.querySelectorAll('section, .product-item, .hero-image');
-    
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
           setTimeout(() => {
             entry.target.classList.add(CSS_CLASSES.fadeIn);
           }, index * APP_CONFIG.ANIMATION_DELAYS.CASCADE_INCREMENT);
-          
+
           observer.unobserve(entry.target);
         }
       });
@@ -819,12 +823,12 @@ class AnimationManager {
    */
   setupHoverEffects() {
     const productItems = document.querySelectorAll(SELECTORS.productItems);
-    
+
     productItems.forEach((item) => {
       item.addEventListener('mouseenter', () => {
         this.animateProductItem(item, 'enter');
       });
-      
+
       item.addEventListener('mouseleave', () => {
         this.animateProductItem(item, 'leave');
       });
@@ -854,7 +858,7 @@ class AnimationManager {
    */
   setupImageOptimization() {
     const images = document.querySelectorAll('img');
-    
+
     // Lazy loading para imagens
     if ('loading' in HTMLImageElement.prototype) {
       images.forEach((img) => {
@@ -975,6 +979,248 @@ class PerformanceManager {
 }
 
 // =========================================
+// GERENCIADOR DE TABELA DE PREÇOS
+// =========================================
+
+/**
+ * Gerencia a funcionalidade de abas da tabela de preços
+ */
+class PricingTableManager {
+  constructor() {
+    this.tabs = document.querySelectorAll(SELECTORS.categoryTabs);
+    this.panels = document.querySelectorAll(SELECTORS.pricingPanels);
+    this.currentTab = 0;
+
+    this.init();
+  }
+
+  /**
+   * Inicializa o gerenciador de tabela de preços
+   */
+  init() {
+    if (this.tabs.length === 0) {
+      console.log('📋 Tabela de preços não encontrada, pulando inicialização...');
+      return;
+    }
+
+    this.bindEvents();
+    this.setupKeyboardNavigation();
+    this.enhanceAccessibility();
+
+    console.log('📋 Tabela de preços inicializada com sucesso');
+  }
+
+  /**
+   * Liga eventos das abas
+   */
+  bindEvents() {
+    this.tabs.forEach((tab, index) => {
+      // Evento de clique
+      tab.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.switchTab(index);
+      });
+
+      // Evento de teclado
+      tab.addEventListener('keydown', (e) => {
+        this.handleKeyboardNavigation(e, index);
+      });
+    });
+  }
+
+  /**
+   * Configura navegação por teclado
+   */
+  setupKeyboardNavigation() {
+    this.tabs.forEach((tab, index) => {
+      tab.setAttribute('tabindex', index === 0 ? '0' : '-1');
+    });
+  }
+
+  /**
+   * Aprimora acessibilidade
+   */
+  enhanceAccessibility() {
+    // Adiciona labels dinâmicos
+    this.tabs.forEach((tab, index) => {
+      const panelId = tab.getAttribute('aria-controls');
+      const panel = document.getElementById(panelId);
+
+      if (panel) {
+        // Garante que o painel tenha role correto
+        panel.setAttribute('role', 'tabpanel');
+        panel.setAttribute('aria-labelledby', tab.id);
+
+        // Define estado inicial
+        if (index !== 0) {
+          panel.setAttribute('aria-hidden', 'true');
+          panel.setAttribute('tabindex', '-1');
+        }
+      }
+    });
+  }
+
+  /**
+   * Manipula navegação por teclado
+   * @param {KeyboardEvent} e - Evento de teclado
+   * @param {number} currentIndex - Índice atual
+   */
+  handleKeyboardNavigation(e, currentIndex) {
+    let targetIndex = currentIndex;
+
+    switch (e.key) {
+      case 'ArrowRight':
+        e.preventDefault();
+        targetIndex = (currentIndex + 1) % this.tabs.length;
+        break;
+
+      case 'ArrowLeft':
+        e.preventDefault();
+        targetIndex = currentIndex === 0 ? this.tabs.length - 1 : currentIndex - 1;
+        break;
+
+      case 'Home':
+        e.preventDefault();
+        targetIndex = 0;
+        break;
+
+      case 'End':
+        e.preventDefault();
+        targetIndex = this.tabs.length - 1;
+        break;
+
+      case 'Enter':
+      case ' ':
+        e.preventDefault();
+        this.switchTab(currentIndex);
+        return;
+    }
+
+    if (targetIndex !== currentIndex) {
+      this.focusTab(targetIndex);
+      this.switchTab(targetIndex);
+    }
+  }
+
+  /**
+   * Move foco para aba específica
+   * @param {number} index - Índice da aba
+   */
+  focusTab(index) {
+    this.tabs.forEach((tab, i) => {
+      tab.setAttribute('tabindex', i === index ? '0' : '-1');
+    });
+
+    this.tabs[index]?.focus();
+  }
+
+  /**
+   * Troca para aba específica
+   * @param {number} index - Índice da aba alvo
+   */
+  switchTab(index) {
+    if (index === this.currentTab || index < 0 || index >= this.tabs.length) {
+      return;
+    }
+
+    // Desativa aba atual
+    const currentTab = this.tabs[this.currentTab];
+    const currentPanel = this.panels[this.currentTab];
+
+    if (currentTab) {
+      currentTab.setAttribute('aria-selected', 'false');
+      currentTab.classList.remove(CSS_CLASSES.active);
+    }
+
+    if (currentPanel) {
+      currentPanel.classList.remove(CSS_CLASSES.active);
+      currentPanel.setAttribute('aria-hidden', 'true');
+      currentPanel.setAttribute('tabindex', '-1');
+    }
+
+    // Ativa nova aba
+    const newTab = this.tabs[index];
+    const newPanel = this.panels[index];
+
+    if (newTab) {
+      newTab.setAttribute('aria-selected', 'true');
+      newTab.classList.add(CSS_CLASSES.active);
+    }
+
+    if (newPanel) {
+      newPanel.classList.add(CSS_CLASSES.active);
+      newPanel.setAttribute('aria-hidden', 'false');
+      newPanel.setAttribute('tabindex', '0');
+
+      // Foca no painel para leitores de tela
+      newPanel.focus();
+    }
+
+    // Atualiza índice atual
+    this.currentTab = index;
+
+    // Analytics (se disponível)
+    if (typeof gtag === 'function') {
+      gtag('event', 'tab_switch', {
+        'event_category': 'pricing_table',
+        'event_label': newTab?.textContent?.trim() || `tab_${index}`,
+        'value': index
+      });
+    }
+
+    // Announce mudança para leitores de tela
+    this.announceTabChange(newTab?.textContent?.trim() || 'Nova aba');
+  }
+
+  /**
+   * Anuncia mudança de aba para leitores de tela
+   * @param {string} tabName - Nome da aba
+   */
+  announceTabChange(tabName) {
+    const announcement = document.createElement('div');
+    announcement.setAttribute('aria-live', 'polite');
+    announcement.setAttribute('aria-atomic', 'true');
+    announcement.className = 'sr-only';
+    announcement.textContent = `Aba ${tabName} selecionada`;
+
+    document.body.appendChild(announcement);
+
+    // Remove após anúncio
+    setTimeout(() => {
+      document.body.removeChild(announcement);
+    }, 1000);
+  }
+
+  /**
+   * Obtém aba ativa atual
+   * @returns {number} - Índice da aba ativa
+   */
+  getCurrentTab() {
+    return this.currentTab;
+  }
+
+  /**
+   * Obtém total de abas
+   * @returns {number} - Total de abas
+   */
+  getTabCount() {
+    return this.tabs.length;
+  }
+
+  /**
+   * Destrói o gerenciador (cleanup)
+   */
+  destroy() {
+    this.tabs.forEach(tab => {
+      const newTab = tab.cloneNode(true);
+      tab.parentNode.replaceChild(newTab, tab);
+    });
+
+    console.log('📋 Gerenciador de tabela de preços destruído');
+  }
+}
+
+// =========================================
 // SISTEMA PRINCIPAL DA APLICAÇÃO
 // =========================================
 
@@ -993,30 +1239,31 @@ class PadariaApp {
   async init() {
     try {
       console.log('🍞 Inicializando Padaria Pão Dourado App...');
-      
+
       // Inicializa módulos principais
       this.modules.navigation = new NavigationManager();
       this.modules.backToTop = new BackToTopButton();
       this.modules.forms = new FormManager();
       this.modules.animations = new AnimationManager();
       this.modules.performance = new PerformanceManager();
-      
+      this.modules.pricingTable = new PricingTableManager();
+
       // Configura service worker se disponível
       await this.setupServiceWorker();
-      
+
       // Configura theme switcher
       this.setupThemeManager();
-      
+
       // Marca como inicializado
       this.isInitialized = true;
-      
+
       console.log('✅ Padaria App inicializada com sucesso!');
-      
+
       // Dispatch evento customizado
       window.dispatchEvent(new CustomEvent('padariaAppReady', {
         detail: { app: this }
       }));
-      
+
     } catch (error) {
       Utils.logError('App Initialization', error);
       console.error('❌ Erro na inicialização da aplicação:', error);
@@ -1043,10 +1290,10 @@ class PadariaApp {
   setupThemeManager() {
     // Detecta preferência do usuário
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-    
+
     // Aplica tema inicial
     this.setTheme(prefersDark.matches ? 'dark' : 'light');
-    
+
     // Escuta mudanças na preferência
     prefersDark.addEventListener('change', (e) => {
       this.setTheme(e.matches ? 'dark' : 'light');
@@ -1088,7 +1335,7 @@ class PadariaApp {
         module.destroy();
       }
     });
-    
+
     this.modules = {};
     this.isInitialized = false;
   }
