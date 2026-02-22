@@ -1,0 +1,989 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR" itemscope itemtype="https://schema.org/LocalBusiness">
+
+<head>
+    <!-- Definição do conjunto de caracteres para suporte completo ao português -->
+    <meta charset="utf-8">
+
+    <!-- Configuração de viewport para responsividade em dispositivos móveis -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Meta tags essenciais para SEO -->
+    <meta name="description"
+        content="Padaria Pão Dourado - Mais de 20 anos servindo os melhores pães, doces e salgados da cidade. Produtos frescos feitos diariamente com ingredientes de qualidade e receitas tradicionais.">
+    <meta name="keywords"
+        content="padaria, pão francês, doces caseiros, salgados, café, confeitaria, pão de queijo, croissant, bolo chocolate, produtos artesanais">
+    <meta name="author" content="Padaria Pão Dourado">
+    <meta name="robots" content="index,follow">
+    <meta name="language" content="pt-BR">
+    <meta name="revisit-after" content="7 days">
+    <meta name="rating" content="General">
+
+    <!-- Título otimizado para SEO -->
+    <title>Padaria Pão Dourado - Os Melhores Pães, Doces e Salgados da Cidade | Produtos Artesanais</title>
+
+    <!-- Meta tags para redes sociais - Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Padaria Pão Dourado - Os Melhores Pães da Cidade">
+    <meta property="og:description"
+        content="Mais de 20 anos servindo os melhores pães, doces e salgados da cidade. Produtos frescos feitos com ingredientes de qualidade.">
+    <meta property="og:image" content="images/hero-image.jpg">
+    <meta property="og:url" content="https://padariapaodourado.com.br">
+    <meta property="og:site_name" content="Padaria Pão Dourado">
+    <meta property="og:locale" content="pt_BR">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Padaria Pão Dourado - Os Melhores Pães da Cidade">
+    <meta name="twitter:description" content="Mais de 20 anos servindo os melhores pães, doces e salgados da cidade.">
+    <meta name="twitter:image" content="images/hero-image.jpg">
+
+    <!-- Schema.org markup para negócio local -->
+    <meta itemprop="name" content="Padaria Pão Dourado">
+    <meta itemprop="description"
+        content="Padaria artesanal com mais de 20 anos de tradição, oferecendo pães, doces e salgados frescos diariamente.">
+    <meta itemprop="image" content="images/hero-image.jpg">
+    <meta itemprop="telephone" content="(11) 1234-5678">
+    <meta itemprop="address" content="Rua das Flores, 123 - Centro, SP">
+
+    <!-- Theme color para browsers -->
+    <meta name="theme-color" content="#8B4513">
+    <meta name="msapplication-navbutton-color" content="#8B4513">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+    <!-- Performance e otimização -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.google.com">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        main {
+            transition: all 0.5s ease-in-out;
+        }
+
+        #produtos {
+            transition: all 0.7s ease-in-out;
+        }
+    </style>
+
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍞</text></svg>">
+
+    <!-- Manifest para PWA -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Preload de recursos críticos -->
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="js/main-harmonizado.js" as="script">
+    <link rel="preload" href="images/hero-image.jpg" as="image" type="image/jpeg">
+
+    <!-- Fonts otimizadas com carregamento assíncrono -->
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Playfair+Display:wght@400;700&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Playfair+Display:wght@400;700&display=swap">
+    </noscript>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Link para o arquivo CSS externo -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://padariapaodourado.com.br">
+</head>
+
+<body class="font-sans antialiased">
+    <!-- Skip links para acessibilidade -->
+    <a href="#main-content" class="skip-links">Pular para o conteúdo principal</a>
+
+    <!-- Navegação harmonizada -->
+    <nav class="navbar" role="navigation" aria-label="Navegação principal">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center py-3">
+                <a class="navbar-brand" href="#" itemprop="url">
+                    <span itemprop="name">Pão Dourado</span>
+                </a>
+                <div class="navbar-nav d-flex">
+                    <a class="nav-link active" href="#hero" aria-current="page">Início</a>
+                    <a class="nav-link" href="#produtos">Produtos</a>
+                    <a class="nav-link" href="#precos">Preços</a>
+                    <a class="nav-link" href="#contato">Contato</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content" role="main">
+        <!-- Hero Section Completamente Harmonizada -->
+        <section id="hero" class="section-padding animate-fade-in-up">
+            <div class="hero-content">
+                <h1 class="hero-title" itemprop="name">
+                    Padaria Pão Dourado
+                </h1>
+                <p class="hero-subtitle" itemprop="description">
+                    Há mais de 20 anos servindo os melhores pães, doces e salgados da cidade
+                    com receitas artesanais e ingredientes frescos selecionados diariamente.
+                </p>
+
+                <div class="hero-image-container animate-fade-in-scale">
+                    <img src="images/hero-image.jpg" alt="Padaria Pão Dourado - Interior acolhedor com produtos frescos"
+                        class="hero-image loaded" loading="eager" itemprop="image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Produtos Harmonizada -->
+        <section id="produtos" class="section-padding bg-gray-50">
+            <div class="container">
+                <div class="section-header animate-fade-in-up">
+                    <h2 class="section-title" itemprop="hasOfferCatalog" itemscope
+                        itemtype="https://schema.org/OfferCatalog">
+                        <span itemprop="name">Nossos Produtos</span>
+                    </h2>
+                    <p class="section-subtitle">
+                        Descubra nossa seleção de produtos artesanais, preparados diariamente
+                        com os melhores ingredientes e muito carinho.
+                    </p>
+                </div>
+
+                <div class="products-grid">
+                    <!-- Produto 1: Pães -->
+                    <article class="product-card animate-fade-in-scale" itemscope itemtype="https://schema.org/Product">
+                        <img src="images/pao.jpg" alt="Variedade de pães artesanais frescos" class="product-image"
+                            itemprop="image">
+                        <div class="product-info">
+                            <h3 class="product-title" itemprop="name">Pães Artesanais</h3>
+                            <p class="product-description" itemprop="description">
+                                Pães frescos assados diariamente, incluindo francês, integral,
+                                pão de queijo e nossas especialidades exclusivas da casa.
+                            </p>
+                            <div itemprop="offers" itemscope itemtype="https://schema.org/AggregateOffer">
+                                <meta itemprop="priceCurrency" content="BRL">
+                                <meta itemprop="lowPrice" content="0.50">
+                                <meta itemprop="highPrice" content="15.00">
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Produto 2: Doces -->
+                    <article class="product-card animate-fade-in-scale" itemscope itemtype="https://schema.org/Product">
+                        <img src="images/doce.jpg" alt="Doces e bolos caseiros variados" class="product-image"
+                            itemprop="image">
+                        <div class="product-info">
+                            <h3 class="product-title" itemprop="name">Doces e Bolos</h3>
+                            <p class="product-description" itemprop="description">
+                                Doces caseiros, bolos de chocolate, tortas e sobremesas
+                                preparadas com receitas tradicionais da família.
+                            </p>
+                            <div itemprop="offers" itemscope itemtype="https://schema.org/AggregateOffer">
+                                <meta itemprop="priceCurrency" content="BRL">
+                                <meta itemprop="lowPrice" content="2.50">
+                                <meta itemprop="highPrice" content="45.00">
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Produto 3: Salgados -->
+                    <article class="product-card animate-fade-in-scale" itemscope itemtype="https://schema.org/Product">
+                        <img src="images/salgado.jpg" alt="Salgados assados e fritos diversos" class="product-image"
+                            itemprop="image">
+                        <div class="product-info">
+                            <h3 class="product-title" itemprop="name">Salgados Especiais</h3>
+                            <p class="product-description" itemprop="description">
+                                Coxinhas, pastéis, esfirras e uma variedade de salgados
+                                assados e fritos preparados na hora para você.
+                            </p>
+                            <div itemprop="offers" itemscope itemtype="https://schema.org/AggregateOffer">
+                                <meta itemprop="priceCurrency" content="BRL">
+                                <meta itemprop="lowPrice" content="3.50">
+                                <meta itemprop="highPrice" content="18.00">
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Preços Harmonizada -->
+        <section id="precos" class="section-padding" role="region" aria-labelledby="precos-title">
+            <div class="container">
+                <div class="section-header animate-fade-in-up">
+                    <h2 id="precos-title" class="section-title">Cardápio e Preços</h2>
+                    <p class="section-subtitle">
+                        Confira nossos preços especiais e escolha seus produtos favoritos.
+                        Qualidade artesanal com preços justos para toda a família.
+                    </p>
+                </div>
+
+                <!-- Navegação por categorias harmonizada -->
+                <div class="pricing-tabs animate-fade-in-up" role="tablist" aria-label="Categorias de produtos">
+                    <button type="button" role="tab" aria-selected="true" aria-controls="paes-panel" id="paes-tab"
+                        class="pricing-tab active">
+                        <span class="tab-icon"><i class="fas fa-bread-slice"></i></span>
+                        <span class="tab-text">Pães</span>
+                    </button>
+                    <button type="button" role="tab" aria-selected="false" aria-controls="doces-panel" id="doces-tab"
+                        class="pricing-tab">
+                        <span class="tab-icon"><i class="fas fa-birthday-cake"></i></span>
+                        <span class="tab-text">Doces</span>
+                    </button>
+                    <button type="button" role="tab" aria-selected="false" aria-controls="salgados-panel"
+                        id="salgados-tab" class="pricing-tab">
+                        <span class="tab-icon"><i class="fas fa-utensils"></i></span>
+                        <span class="tab-text">Salgados</span>
+                    </button>
+                    <button type="button" role="tab" aria-selected="false" aria-controls="bebidas-panel"
+                        id="bebidas-tab" class="pricing-tab">
+                        <span class="tab-icon"><i class="fas fa-coffee"></i></span>
+                        <span class="tab-text">Bebidas</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Painéis de preços harmonizados -->
+            <div class="pricing-content animate-fade-in-scale">
+                <!-- Painel Pães -->
+                <div id="paes-panel" class="pricing-panel active" role="tabpanel" aria-labelledby="paes-tab">
+                    <div class="pricing-grid">
+                        <div class="pricing-item" itemscope itemtype="https://schema.org/Product">
+                            <div class="pricing-item-header">
+                                <h4 class="pricing-item-name" itemprop="name">Pão Francês</h4>
+                                <span class="pricing-item-size">50g</span>
+                            </div>
+                            <div class="pricing-item-price" itemprop="offers" itemscope
+                                itemtype="https://schema.org/Offer">
+                                <span class="currency">R$</span>
+                                <span class="price" itemprop="price">0,80</span>
+                                <meta itemprop="priceCurrency" content="BRL">
+                            </div>
+                        </div>
+
+                        <div class="pricing-item" itemscope itemtype="https://schema.org/Product">
+                            <div class="pricing-item-header">
+                                <h4 class="pricing-item-name" itemprop="name">Pão Integral</h4>
+                                <span class="pricing-item-size">500g</span>
+                            </div>
+                            <div class="pricing-item-price" itemprop="offers" itemscope
+                                itemtype="https://schema.org/Offer">
+                                <span class="currency">R$</span>
+                                <span class="price" itemprop="price">8,50</span>
+                                <meta itemprop="priceCurrency" content="BRL">
+                            </div>
+                        </div>
+
+                        <div class="pricing-item" itemscope itemtype="https://schema.org/Product">
+                            <div class="pricing-item-header">
+                                <h4 class="pricing-item-name" itemprop="name">Pão de Centeio</h4>
+                                <span class="pricing-item-size">400g</span>
+                            </div>
+                            <div class="pricing-item-price" itemprop="offers" itemscope
+                                itemtype="https://schema.org/Offer">
+                                <span class="currency">R$</span>
+                                <span class="price" itemprop="price">7,20</span>
+                                <meta itemprop="priceCurrency" content="BRL">
+                            </div>
+                        </div>
+
+                        <div class="pricing-item" itemscope itemtype="https://schema.org/Product">
+                            <div class="pricing-item-header">
+                                <h4 class="pricing-item-name" itemprop="name">Pão de Queijo</h4>
+                                <span class="pricing-item-size">unidade</span>
+                            </div>
+                            <div class="pricing-item-price" itemprop="offers" itemscope
+                                itemtype="https://schema.org/Offer">
+                                <span class="currency">R$</span>
+                                <span class="price" itemprop="price">2,50</span>
+                                <meta itemprop="priceCurrency" content="BRL">
+                            </div>
+                        </div>
+
+                        <div class="pricing-item" itemscope itemtype="https://schema.org/Product">
+                            <div class="pricing-item-header">
+                                <h4 class="pricing-item-name" itemprop="name">Croissant</h4>
+                                <span class="pricing-item-size">unidade</span>
+                            </div>
+                            <div class="pricing-item-price" itemprop="offers" itemscope
+                                itemtype="https://schema.org/Offer">
+                                <span class="currency">R$</span>
+                                <span class="price" itemprop="price">4,50</span>
+                                <meta itemprop="priceCurrency" content="BRL">
+                            </div>
+                        </div>
+
+                        <div class="pricing-item" itemscope itemtype="https://schema.org/Product">
+                            <div class="pricing-item-header">
+                                <h4 class="pricing-item-name" itemprop="name">Baguete</h4>
+                                <span class="pricing-item-size">unidade</span>
+                            </div>
+                            <div class="pricing-item-price" itemprop="offers" itemscope
+                                itemtype="https://schema.org/Offer">
+                                <span class="currency">R$</span>
+                                <span class="price" itemprop="price">6,00</span>
+                                <meta itemprop="priceCurrency" content="BRL">
+                            </div>
+                        </div>
+
+                        <div class="pricing-item" itemscope itemtype="https://schema.org/Product">
+                            <div class="pricing-item-header">
+                                <h4 class="pricing-item-name" itemprop="name">Pão de Forma</h4>
+                                <span class="pricing-item-size">pacote 500g</span>
+                            </div>
+                            <div class="pricing-item-price" itemprop="offers" itemscope
+                                itemtype="https://schema.org/Offer">
+                                <span class="currency">R$</span>
+                                <span class="price" itemprop="price">7,50</span>
+                                <meta itemprop="priceCurrency" content="BRL">
+                            </div>
+                        </div>
+
+                        <div class="pricing-item" itemscope itemtype="https://schema.org/Product">
+                            <div class="pricing-item-header">
+                                <h4 class="pricing-item-name" itemprop="name">Pão Australiano</h4>
+                                <span class="pricing-item-size">unidade</span>
+                            </div>
+                            <div class="pricing-item-price" itemprop="offers" itemscope
+                                itemtype="https://schema.org/Offer">
+                                <span class="currency">R$</span>
+                                <span class="price" itemprop="price">8,90</span>
+                                <meta itemprop="priceCurrency" content="BRL">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Painel Doces -->
+                <div id="doces-panel" class="pricing-panel" role="tabpanel" aria-labelledby="doces-tab">
+                    <div class="pricing-grid">
+                        <div class="pricing-item" itemscope itemtype="https://schema.org/Product">
+                            <div class="pricing-item-header">
+                                <h4 class="pricing-item-name" itemprop="name">Bolo de Chocolate</h4>
+                                <span class="pricing-item-size">fatia</span>
+                            </div>
+                            <div class="pricing-item-price" itemprop="offers" itemscope
+                                itemtype="https://schema.org/Offer">
+                                <span class="currency">R$</span>
+                                <span class="price" itemprop="price">8,90</span>
+                                <meta itemprop="priceCurrency" content="BRL">
+                            </div>
+                        </div>
+
+                        <div class="pricing-item" itemscope itemtype="https://schema.org/Product">
+                            <div class="pricing-item-header">
+                                <h4 class="pricing-item-name" itemprop="name">Torta de Morango</h4>
+                                <span class="pricing-item-size">fatia</span>
+                            </div>
+                            <div class="pricing-item-price" itemprop="offers" itemscope
+                                itemtype="https://schema.org/Offer">
+                                <span class="currency">R$</span>
+                                <span class="price" itemprop="price">12,50</span>
+                                <meta itemprop="priceCurrency" content="BRL">
+                            </div>
+                        </div>
+
+                        <div class="pricing-item" itemscope itemtype="https://schema.org/Product">
+                            <div class="pricing-item-header">
+                                <h4 class="pricing-item-name" itemprop="name">Brigadeiro Gourmet</h4>
+                                <span class="pricing-item-size">unidade</span>
+                            </div>
+                            <div class="pricing-item-price" itemprop="offers" itemscope
+                                itemtype="https://schema.org/Offer">
+                                <span class="currency">R$</span>
+                                <span class="price" itemprop="price">3,50</span>
+                                <meta itemprop="priceCurrency" content="BRL">
+                            </div>
+                        </div>
+
+                        <div class="pricing-item" itemscope itemtype="https://schema.org/Product">
+                            <div class="pricing-item-header">
+                                <h4 class="pricing-item-name" itemprop="name">Pudim Caseiro</h4>
+                                <span class="pricing-item-size">fatia</span>
+                            </div>
+                            <div class="pricing-item-price" itemprop="offers" itemscope
+                                itemtype="https://schema.org/Offer">
+                                <span class="currency">R$</span>
+                                <span class="price" itemprop="price">6,80</span>
+                                <meta itemprop="priceCurrency" content="BRL">
+                            </div>
+                        </div>
+
+                        <div class="pricing-item" itemscope itemtype="https://schema.org/Product">
+                            <div class="pricing-item-header">
+                                <h4 class="pricing-item-name" itemprop="name">Cupcake</h4>
+                                <span class="pricing-item-size">unidade</span>
+                            </div>
+                            <div class="pricing-item-price" itemprop="offers" itemscope
+                                itemtype="https://schema.org/Offer">
+                                <span class="currency">R$</span>
+                                <span class="price" itemprop="price">5,20</span>
+                                <meta itemprop="priceCurrency" content="BRL">
+                            </div>
+                        </div>
+
+                        <div class="pricing-item" itemscope itemtype="https://schema.org/Product">
+                            <div class="pricing-item-header">
+                                <h4 class="pricing-item-name" itemprop="name">Mousse de Maracujá</h4>
+                                <span class="pricing-item-size">taça</span>
+                            </div>
+                            <div class="pricing-item-price" itemprop="offers" itemscope
+                                itemtype="https://schema.org/Offer">
+                                <span class="currency">R$</span>
+                                <span class="price" itemprop="price">7,90</span>
+                                <meta itemprop="priceCurrency" content="BRL">
+                            </div>
+                        </div>
+
+                        <div class="pricing-item" itemscope itemtype="https://schema.org/Product">
+                            <div class="pricing-item-header">
+                                <h4 class="pricing-item-name" itemprop="name">Torta de Limão</h4>
+                                <span class="pricing-item-size">fatia</span>
+                            </div>
+                            <div class="pricing-item-price" itemprop="offers" itemscope
+                                itemtype="https://schema.org/Offer">
+                                <span class="currency">R$</span>
+                                <span class="price" itemprop="price">9,50</span>
+                                <meta itemprop="priceCurrency" content="BRL">
+                            </div>
+                        </div>
+
+                        <div class="pricing-item" itemscope itemtype="https://schema.org/Product">
+                            <div class="pricing-item-header">
+                                <h4 class="pricing-item-name" itemprop="name">Pavê de Chocolate</h4>
+                                <span class="pricing-item-size">porção</span>
+                            </div>
+                            <div class="pricing-item-price" itemprop="offers" itemscope
+                                itemtype="https://schema.org/Offer">
+                                <span class="currency">R$</span>
+                                <span class="price" itemprop="price">8,20</span>
+                                <meta itemprop="priceCurrency" content="BRL">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Painel Salgados -->
+                <div id="salgados-panel" class="pricing-panel" role="tabpanel" aria-labelledby="salgados-tab">
+                    <div class="pricing-grid">
+                        <div class="pricing-item" itemscope itemtype="https://schema.org/Product">
+                            <div class="pricing-item-header">
+                                <h4 class="pricing-item-name" itemprop="name">Coxinha</h4>
+                                <span class="pricing-item-size">unidade</span>
+                            </div>
+                            <div class="pricing-item-price" itemprop="offers" itemscope
+                                itemtype="https://schema.org/Offer">
+                                <span class="currency">R$</span>
+                                <span class="price" itemprop="price">4,50</span>
+                                <meta itemprop="priceCurrency" content="BRL">
+                            </div>
+                        </div>
+
+                        <div class="pricing-item" itemscope itemtype="https://schema.org/Product">
+                            <div class="pricing-item-header">
+                                <h4 class="pricing-item-name" itemprop="name">Pastel Assado</h4>
+                                <span class="pricing-item-size">unidade</span>
+                            </div>
+                            <div class="pricing-item-price" itemprop="offers" itemscope
+                                itemtype="https://schema.org/Offer">
+                                <span class="currency">R$</span>
+                                <span class="price" itemprop="price">5,80</span>
+                                <meta itemprop="priceCurrency" content="BRL">
+                            </div>
+                        </div>
+
+                        <div class="pricing-item" itemscope itemtype="https://schema.org/Product">
+                            <div class="pricing-item-header">
+                                <h4 class="pricing-item-name" itemprop="name">Esfirra de Carne</h4>
+                                <span class="pricing-item-size">unidade</span>
+                            </div>
+                            <div class="pricing-item-price" itemprop="offers" itemscope
+                                itemtype="https://schema.org/Offer">
+                                <span class="currency">R$</span>
+                                <span class="price" itemprop="price">3,80</span>
+                                <meta itemprop="priceCurrency" content="BRL">
+                            </div>
+                        </div>
+
+                        <div class="pricing-item" itemscope itemtype="https://schema.org/Product">
+                            <div class="pricing-item-header">
+                                <h4 class="pricing-item-name" itemprop="name">Quiche Lorraine</h4>
+                                <span class="pricing-item-size">fatia</span>
+                            </div>
+                            <div class="pricing-item-price" itemprop="offers" itemscope
+                                itemtype="https://schema.org/Offer">
+                                <span class="currency">R$</span>
+                                <span class="price" itemprop="price">9,50</span>
+                                <meta itemprop="priceCurrency" content="BRL">
+                            </div>
+                        </div>
+
+                        <div class="pricing-item" itemscope itemtype="https://schema.org/Product">
+                            <div class="pricing-item-header">
+                                <h4 class="pricing-item-name" itemprop="name">Empada de Frango</h4>
+                                <span class="pricing-item-size">unidade</span>
+                            </div>
+                            <div class="pricing-item-price" itemprop="offers" itemscope
+                                itemtype="https://schema.org/Offer">
+                                <span class="currency">R$</span>
+                                <span class="price" itemprop="price">4,20</span>
+                                <meta itemprop="priceCurrency" content="BRL">
+                            </div>
+                        </div>
+
+                        <div class="pricing-item" itemscope itemtype="https://schema.org/Product">
+                            <div class="pricing-item-header">
+                                <h4 class="pricing-item-name" itemprop="name">Sanduíche Natural</h4>
+                                <span class="pricing-item-size">unidade</span>
+                            </div>
+                            <div class="pricing-item-price" itemprop="offers" itemscope
+                                itemtype="https://schema.org/Offer">
+                                <span class="currency">R$</span>
+                                <span class="price" itemprop="price">7,90</span>
+                                <meta itemprop="priceCurrency" content="BRL">
+                            </div>
+                        </div>
+
+                        <div class="pricing-item" itemscope itemtype="https://schema.org/Product">
+                            <div class="pricing-item-header">
+                                <h4 class="pricing-item-name" itemprop="name">Enroladinho de Salsicha</h4>
+                                <span class="pricing-item-size">unidade</span>
+                            </div>
+                            <div class="pricing-item-price" itemprop="offers" itemscope
+                                itemtype="https://schema.org/Offer">
+                                <span class="currency">R$</span>
+                                <span class="price" itemprop="price">3,20</span>
+                                <meta itemprop="priceCurrency" content="BRL">
+                            </div>
+                        </div>
+
+                        <div class="pricing-item" itemscope itemtype="https://schema.org/Product">
+                            <div class="pricing-item-header">
+                                <h4 class="pricing-item-name" itemprop="name">Folhado de Presunto e Queijo</h4>
+                                <span class="pricing-item-size">unidade</span>
+                            </div>
+                            <div class="pricing-item-price" itemprop="offers" itemscope
+                                itemtype="https://schema.org/Offer">
+                                <span class="currency">R$</span>
+                                <span class="price" itemprop="price">5,50</span>
+                                <meta itemprop="priceCurrency" content="BRL">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Painel Bebidas -->
+                <div id="bebidas-panel" class="pricing-panel" role="tabpanel" aria-labelledby="bebidas-tab">
+                    <div class="pricing-grid">
+                        <div class="pricing-item" itemscope itemtype="https://schema.org/Product">
+                            <div class="pricing-item-header">
+                                <h4 class="pricing-item-name" itemprop="name">Café Expresso</h4>
+                                <span class="pricing-item-size">xícara</span>
+                            </div>
+                            <div class="pricing-item-price" itemprop="offers" itemscope
+                                itemtype="https://schema.org/Offer">
+                                <span class="currency">R$</span>
+                                <span class="price" itemprop="price">3,50</span>
+                                <meta itemprop="priceCurrency" content="BRL">
+                            </div>
+                        </div>
+
+                        <div class="pricing-item" itemscope itemtype="https://schema.org/Product">
+                            <div class="pricing-item-header">
+                                <h4 class="pricing-item-name" itemprop="name">Cappuccino</h4>
+                                <span class="pricing-item-size">xícara grande</span>
+                            </div>
+                            <div class="pricing-item-price" itemprop="offers" itemscope
+                                itemtype="https://schema.org/Offer">
+                                <span class="currency">R$</span>
+                                <span class="price" itemprop="price">6,80</span>
+                                <meta itemprop="priceCurrency" content="BRL">
+                            </div>
+                        </div>
+
+                        <div class="pricing-item" itemscope itemtype="https://schema.org/Product">
+                            <div class="pricing-item-header">
+                                <h4 class="pricing-item-name" itemprop="name">Suco Natural</h4>
+                                <span class="pricing-item-size">300ml</span>
+                            </div>
+                            <div class="pricing-item-price" itemprop="offers" itemscope
+                                itemtype="https://schema.org/Offer">
+                                <span class="currency">R$</span>
+                                <span class="price" itemprop="price">5,50</span>
+                                <meta itemprop="priceCurrency" content="BRL">
+                            </div>
+                        </div>
+
+                        <div class="pricing-item" itemscope itemtype="https://schema.org/Product">
+                            <div class="pricing-item-header">
+                                <h4 class="pricing-item-name" itemprop="name">Chocolate Quente</h4>
+                                <span class="pricing-item-size">xícara grande</span>
+                            </div>
+                            <div class="pricing-item-price" itemprop="offers" itemscope
+                                itemtype="https://schema.org/Offer">
+                                <span class="currency">R$</span>
+                                <span class="price" itemprop="price">8,20</span>
+                                <meta itemprop="priceCurrency" content="BRL">
+                            </div>
+                        </div>
+
+                        <div class="pricing-item" itemscope itemtype="https://schema.org/Product">
+                            <div class="pricing-item-header">
+                                <h4 class="pricing-item-name" itemprop="name">Água Mineral</h4>
+                                <span class="pricing-item-size">500ml</span>
+                            </div>
+                            <div class="pricing-item-price" itemprop="offers" itemscope
+                                itemtype="https://schema.org/Offer">
+                                <span class="currency">R$</span>
+                                <span class="price" itemprop="price">2,50</span>
+                                <meta itemprop="priceCurrency" content="BRL">
+                            </div>
+                        </div>
+
+                        <div class="pricing-item" itemscope itemtype="https://schema.org/Product">
+                            <div class="pricing-item-header">
+                                <h4 class="pricing-item-name" itemprop="name">Refrigerante</h4>
+                                <span class="pricing-item-size">350ml</span>
+                            </div>
+                            <div class="pricing-item-price" itemprop="offers" itemscope
+                                itemtype="https://schema.org/Offer">
+                                <span class="currency">R$</span>
+                                <span class="price" itemprop="price">4,00</span>
+                                <meta itemprop="priceCurrency" content="BRL">
+                            </div>
+                        </div>
+
+                        <div class="pricing-item" itemscope itemtype="https://schema.org/Product">
+                            <div class="pricing-item-header">
+                                <h4 class="pricing-item-name" itemprop="name">Suco de Laranja</h4>
+                                <span class="pricing-item-size">300ml</span>
+                            </div>
+                            <div class="pricing-item-price" itemprop="offers" itemscope
+                                itemtype="https://schema.org/Offer">
+                                <span class="currency">R$</span>
+                                <span class="price" itemprop="price">6,50</span>
+                                <meta itemprop="priceCurrency" content="BRL">
+                            </div>
+                        </div>
+
+                        <div class="pricing-item" itemscope itemtype="https://schema.org/Product">
+                            <div class="pricing-item-header">
+                                <h4 class="pricing-item-name" itemprop="name">Chá Gelado</h4>
+                                <span class="pricing-item-size">400ml</span>
+                            </div>
+                            <div class="pricing-item-price" itemprop="offers" itemscope
+                                itemtype="https://schema.org/Offer">
+                                <span class="currency">R$</span>
+                                <span class="price" itemprop="price">5,80</span>
+                                <meta itemprop="priceCurrency" content="BRL">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- Seção de Contato Harmonizada -->
+        <section id="contato" class="section-padding">
+            <div class="container">
+                <div class="section-header animate-fade-in-up">
+                    <h2 class="section-title">Entre em Contato</h2>
+                    <p class="section-subtitle">
+                        Estamos sempre prontos para atendê-lo. Entre em contato conosco
+                        para encomendas, dúvidas ou sugestões.
+                    </p>
+                </div>
+
+                <div class="contact-grid animate-fade-in-up">
+                    <!-- Formulário de Contato -->
+                    <div class="contact-form">
+                        <h3>Envie sua Mensagem</h3>
+                        <form class="form-contact" role="form" aria-label="Formulário de contato">
+                            <div class="form-group">
+                                <label for="contact-name" class="form-label">Nome Completo</label>
+                                <input type="text" id="contact-name" name="name" class="form-control"
+                                    placeholder="Seu nome completo" required aria-describedby="name-help">
+                                <small id="name-help" class="form-text">Como devemos chamá-lo?</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-email" class="form-label">E-mail</label>
+                                <input type="email" id="contact-email" name="email" class="form-control"
+                                    placeholder="seu@email.com" required aria-describedby="email-help">
+                                <small id="email-help" class="form-text">Para respondermos sua mensagem</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-phone" class="form-label">Telefone (Opcional)</label>
+                                <input type="tel" id="contact-phone" name="phone" class="form-control"
+                                    placeholder="(00) 00000-0000" aria-describedby="phone-help">
+                                <small id="phone-help" class="form-text">Para contato mais rápido</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-subject" class="form-label">Assunto</label>
+                                <div class="select-wrapper">
+                                    <select id="contact-subject" name="subject" class="form-control form-select"
+                                        required aria-describedby="subject-help">
+                                        <option value="">Selecione o assunto</option>
+                                        <option value="encomenda">Encomenda</option>
+                                        <option value="duvida">Dúvida sobre produtos</option>
+                                        <option value="sugestao">Sugestão</option>
+                                        <option value="reclamacao">Reclamação</option>
+                                        <option value="elogio">Elogio</option>
+                                        <option value="outro">Outro</option>
+                                    </select>
+                                </div>
+                                <small id="subject-help" class="form-text">Nos ajude a direcionar melhor</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-message" class="form-label">Mensagem</label>
+                                <textarea id="contact-message" name="message" class="form-control" rows="5"
+                                    placeholder="Escreva sua mensagem aqui..." required
+                                    aria-describedby="message-help"></textarea>
+                                <small id="message-help" class="form-text">Descreva detalhadamente seu pedido ou
+                                    dúvida</small>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <input type="checkbox" id="contact-privacy" name="privacy" class="form-check-input"
+                                        required>
+                                    <label for="contact-privacy" class="form-check-label">
+                                        Li e concordo com a política de privacidade e autorizo o uso dos meus dados.
+                                    </label>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-lg w-100">
+                                Enviar Mensagem
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Informações de Contato -->
+                    <div class="contact-info" itemscope itemtype="https://schema.org/LocalBusiness">
+                        <h3>Nossas Informações</h3>
+
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="info-text" itemprop="address" itemscope
+                                itemtype="https://schema.org/PostalAddress">
+                                <div class="info-label">Endereço</div>
+                                <div class="info-value">
+                                    <span itemprop="streetAddress">Rua das Flores, 123</span><br>
+                                    <span itemprop="addressLocality">Centro</span>, <span
+                                        itemprop="addressRegion">SP</span><br>
+                                    CEP: <span itemprop="postalCode">01234-567</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fas fa-phone"></i></div>
+                            <div class="info-text">
+                                <div class="info-label">Telefone</div>
+                                <div class="info-value">
+                                    <span itemprop="telephone">(11) 1234-5678</span><br>
+                                    <small>WhatsApp disponível</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fas fa-check"></i></div>
+                            <div class="info-text">
+                                <div class="info-label">E-mail</div>
+                                <div class="info-value" itemprop="email">contato@padariapaodourado.com.br</div>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fas fa-clock"></i></div>
+                            <div class="info-text" itemprop="openingHours" content="Mo-Sa 06:00-20:00 Su 07:00-18:00">
+                                <div class="info-label">Horário de Funcionamento</div>
+                                <div class="info-value">
+                                    Segunda à Sábado: 6h às 20h<br>
+                                    Domingo: 7h às 18h
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fas fa-globe"></i></div>
+                            <div class="info-text">
+                                <div class="info-label">Redes Sociais</div>
+                                <div class="info-value">
+                                    <a href="#" target="_blank" rel="noopener">Facebook</a> |
+                                    <a href="#" target="_blank" rel="noopener">Instagram</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fas fa-car"></i></div>
+                            <div class="info-text">
+                                <div class="info-label">Estacionamento</div>
+                                <div class="info-value">
+                                    Zona azul na rua<br>
+                                    <small>Entrega delivery disponível</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Otimizado com Princípios de UX -->
+    <footer itemscope itemtype="https://schema.org/LocalBusiness">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Informações da Empresa (Posição estratégica - esquerda) -->
+                <div class="footer-section">
+                    <h3><i class="fas fa-store"></i> Padaria Pão Dourado</h3>
+                    <p itemprop="description">
+                        Há mais de 20 anos servindo os melhores pães, doces e salgados
+                        da cidade com receitas artesanais e ingredientes frescos.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" target="_blank" rel="noopener" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Links Rápidos (Centro - menor prioridade) -->
+                <div class="footer-section">
+                    <h3><i class="fas fa-link"></i> Navegação</h3>
+                    <nav role="navigation" aria-label="Links do rodapé">
+                        <ul class="footer-links">
+                            <li><a href="#produtos"><i class="fas fa-utensils"></i> Produtos</a></li>
+                            <li><a href="#precos"><i class="fas fa-tags"></i> Preços</a></li>
+                            <li><a href="#contato"><i class="fas fa-envelope"></i> Contato</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Contato (Posição estratégica - direita) -->
+                <div class="footer-section">
+                    <h3><i class="fas fa-phone"></i> Contato</h3>
+                    <div class="contact-info">
+                        <p>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                                <span itemprop="streetAddress">Rua das Flores, 123</span><br>
+                                <span itemprop="addressLocality">Centro</span> - <span
+                                    itemprop="addressRegion">SP</span>
+                            </span>
+                        </p>
+                        <p>
+                            <i class="fas fa-phone"></i>
+                            <span itemprop="telephone">(11) 1234-5678</span>
+                        </p>
+                        <p>
+                            <i class="fas fa-clock"></i>
+                            <span itemprop="openingHours" content="Mo-Sa 06:00-20:00 Su 07:00-18:00">
+                                Seg-Sáb: 6h-20h<br>Dom: 7h-18h
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Links Legais (Posição estratégica inferior) -->
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <a href="#" rel="noopener" target="_blank">Política de Privacidade</a>
+                    <span class="separator">|</span>
+                    <a href="#" rel="noopener" target="_blank">Termos de Uso</a>
+                </div>
+                <p>&copy; 2025 Padaria Pão Dourado. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container para notificações -->
+    <div class="toast-container" id="toast-container" role="alert" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- Loading indicator -->
+    <div class="page-loading" id="page-loading" aria-hidden="true"></div>
+
+    <!-- Link para o arquivo JavaScript harmonizado -->
+    <script src="js/main-harmonizado.js"></script>
+
+    <!-- Dados estruturados JSON-LD para SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Bakery",
+        "@id": "https://padariapaodourado.com.br",
+        "name": "Padaria Pão Dourado",
+        "description": "Padaria artesanal com mais de 20 anos de tradição, oferecendo pães, doces e salgados frescos diariamente.",
+        "image": [
+            "https://padariapaodourado.com.br/images/hero-image.jpg",
+            "https://padariapaodourado.com.br/images/pao.jpg",
+            "https://padariapaodourado.com.br/images/doce.jpg",
+            "https://padariapaodourado.com.br/images/salgado.jpg"
+        ],
+        "telephone": "(11) 1234-5678",
+        "email": "contato@padariapaodourado.com.br",
+        "url": "https://padariapaodourado.com.br",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Rua das Flores, 123",
+            "addressLocality": "Centro",
+            "addressRegion": "SP",
+            "addressCountry": "BR"
+        },
+        "openingHours": [
+            "Mo-Sa 06:00-20:00",
+            "Su 07:00-18:00"
+        ],
+        "servesCuisine": "Brazilian",
+        "foundingDate": "2003",
+        "priceRange": "$$",
+        "sameAs": [
+            "https://instagram.com/paodourado",
+            "https://facebook.com/padariapaodourado",
+            "https://twitter.com/paodouradooficial"
+        ],
+        "hasMenu": {
+            "@type": "Menu",
+            "hasMenuSection": [
+                {
+                    "@type": "MenuSection",
+                    "name": "Pães",
+                    "hasMenuItem": [
+                        {
+                            "@type": "MenuItem",
+                            "name": "Pão Francês",
+                            "description": "Pão tradicional francês crocante",
+                            "offers": {
+                                "@type": "Offer",
+                                "price": "0.80",
+                                "priceCurrency": "BRL"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+    </script>
+</body>
+
+
+</html>
