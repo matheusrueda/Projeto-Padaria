@@ -508,6 +508,8 @@ nav a:hover::after {
 /* Main content centralizado */
 main {
     min-height: calc(100vh - 160px);
+    padding-top: 80px;
+    /* Compensação da navbar fixa */
 }
 
 /* Seções com espaçamento harmônico */
@@ -1308,9 +1310,11 @@ textarea:focus-visible {
 
 .form-control:focus {
     border-color: var(--color-primary-500);
-    box-shadow: 0 4px 12px rgba(139, 69, 19, 0.15); /* Sombra mais elegante no focus */
+    box-shadow: 0 4px 12px rgba(139, 69, 19, 0.15);
+    /* Sombra mais elegante no focus */
     outline: none;
-    transform: translateY(-2px); /* Elevação suave */
+    transform: translateY(-2px);
+    /* Elevação suave */
 }
 
 .form-control::placeholder {
