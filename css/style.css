@@ -356,6 +356,27 @@ legend {
 }
 
 /* =========================================
+   UTILITÁRIOS FLEXBOX BOOTSTRAP
+   ========================================= */
+
+.d-flex {
+    display: flex !important;
+}
+
+.justify-content-between {
+    justify-content: space-between !important;
+}
+
+.align-items-center {
+    align-items: center !important;
+}
+
+.py-3 {
+    padding-top: var(--spacing-4) !important;
+    padding-bottom: var(--spacing-4) !important;
+}
+
+/* =========================================
    SISTEMA DE TIPOGRAFIA
    ========================================= */
 
@@ -949,6 +970,12 @@ section:nth-child(even) {
     font-weight: var(--font-weight-bold);
     color: var(--color-primary-800);
     text-decoration: none;
+}
+
+.navbar-nav {
+    display: flex;
+    gap: var(--spacing-6);
+    align-items: center;
 }
 
 .navbar-nav .nav-link {
