@@ -1308,9 +1308,9 @@ textarea:focus-visible {
 
 .form-control:focus {
     border-color: var(--color-primary-500);
-    box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1);
+    box-shadow: 0 4px 12px rgba(139, 69, 19, 0.15); /* Sombra mais elegante no focus */
     outline: none;
-    transform: translateY(-1px);
+    transform: translateY(-2px); /* Elevação suave */
 }
 
 .form-control::placeholder {
@@ -1406,7 +1406,12 @@ textarea:focus-visible {
     transform: translateY(-1px);
 }
 
-/* Estilos para as opções quando o select está aberto */
+/* Estilos para as opções quando o select está aberto e animando focus */
+.form-select:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 69, 19, 0.15);
+}
+
 .form-select:focus option:hover {
     background-color: var(--color-primary-50);
     color: var(--color-primary-700);

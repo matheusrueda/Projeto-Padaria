@@ -16,6 +16,7 @@ class PadariaHarmonizada {
      * Inicialização de componentes principais
      */
     initializeComponents() {
+        this.contentRenderer = new ContentRenderer();
         this.pricingManager = new PricingTableManager();
         this.contactManager = new ContactFormManager();
         this.animationManager = new AnimationManager();
@@ -485,11 +486,16 @@ class ContactFormManager {
         submitButton.textContent = 'Enviando...';
 
         try {
-            // Simular envio (substituir por API real)
-            await this.simulateFormSubmission();
+            // Simular envio (Promise fictícia avançada)
+            await this.simulateFormSubmission(submitButton);
 
             this.showToast('Mensagem enviada com sucesso! Responderemos em breve.', 'success');
             this.form.reset();
+
+            // Restaurar estado visual customizado para selects
+            this.form.querySelectorAll('.form-select').forEach(select => {
+                select.value = '';
+            });
 
             // Limpar classes de validação
             this.form.querySelectorAll('.form-control').forEach(input => {
@@ -507,16 +513,24 @@ class ContactFormManager {
         }
     }
 
-    simulateFormSubmission() {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                // Simular sucesso (90% das vezes)
-                if (Math.random() > 0.1) {
-                    resolve();
-                } else {
-                    reject(new Error('Erro simulado'));
+    simulateFormSubmission(button) {
+        return new Promise((resolve) => {
+            let progress = 0;
+            const originalText = 'Enviando...';
+
+            const interval = setInterval(() => {
+                progress += Math.random() * 20;
+                if (progress > 100) progress = 100;
+
+                // UX Feedback: Mudando texto sutilmente
+                if (progress > 33 && progress < 66) button.textContent = 'Processando...';
+                if (progress >= 66 && progress < 99) button.textContent = 'Quase lá...';
+
+                if (progress === 100) {
+                    clearInterval(interval);
+                    setTimeout(() => resolve(), 300);
                 }
-            }, 2000);
+            }, 400); // Demora entre 2 e 3 segundos no total dependendo do Math.random
         });
     }
 
@@ -689,6 +703,88 @@ class ToastManager {
                 this.toasts = this.toasts.filter(t => t !== toast);
             }, 300);
         }
+    }
+}
+
+/**
+ * RENDERIZADOR DE CONTEÚDO DINÂMICO
+ */
+class ContentRenderer {
+    constructor() {
+        if (window.padariaData) {
+            this.data = window.padariaData;
+            this.renderProducts();
+            this.renderPricing();
+            console.log('✅ Conteúdo dinâmico carregado');
+        } else {
+            console.warn('Dados não encontrados. O HTML original será mantido.');
+        }
+    }
+
+    renderProducts() {
+        const container = document.getElementById('produtos-grid-container');
+        if (!container) return;
+
+        container.innerHTML = ''; // Limpa o conteúdo original (fallback SEO)
+
+        this.data.produtos.forEach((prod) => {
+            const article = document.createElement('article');
+            article.className = 'product-card animate-fade-in-scale';
+            article.setAttribute('itemscope', '');
+            article.setAttribute('itemtype', 'https://schema.org/Product');
+
+            article.innerHTML = `
+                <img src="${prod.imgSrc}" alt="${prod.alt}" class="product-image" itemprop="image">
+                <div class="product-info">
+                    <h3 class="product-title" itemprop="name">${prod.titulo}</h3>
+                    <p class="product-description" itemprop="description">
+                        ${prod.descricao}
+                    </p>
+                    <div itemprop="offers" itemscope itemtype="https://schema.org/AggregateOffer">
+                        <meta itemprop="priceCurrency" content="BRL">
+                        <meta itemprop="lowPrice" content="${prod.precoMin}">
+                        <meta itemprop="highPrice" content="${prod.precoMax}">
+                    </div>
+                </div>
+            `;
+            container.appendChild(article);
+        });
+    }
+
+    renderPricing() {
+        const categories = [
+            { id: 'paes', data: this.data.precos.paes },
+            { id: 'doces', data: this.data.precos.doces },
+            { id: 'salgados', data: this.data.precos.salgados },
+            { id: 'bebidas', data: this.data.precos.bebidas }
+        ];
+
+        categories.forEach(cat => {
+            const container = document.getElementById(`${cat.id}-grid-container`);
+            if (!container) return;
+
+            container.innerHTML = ''; // Limpa fallback SEO
+
+            cat.data.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'pricing-item';
+                div.setAttribute('itemscope', '');
+                div.setAttribute('itemtype', 'https://schema.org/Product');
+
+                div.innerHTML = `
+                    <div class="pricing-item-header">
+                        <h4 class="pricing-item-name" itemprop="name">${item.nome}</h4>
+                        <span class="pricing-item-size">${item.tamanho}</span>
+                    </div>
+                    <div class="pricing-item-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <span class="currency">R$</span>
+                        <span class="price" itemprop="price">${item.preco}</span>
+                        <meta itemprop="priceCurrency" content="BRL">
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+        });
     }
 }
 

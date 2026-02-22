@@ -155,7 +155,7 @@
                     </p>
                 </div>
 
-                <div class="products-grid">
+                <div class="products-grid" id="produtos-grid-container">
                     <!-- Produto 1: Pães -->
                     <article class="product-card animate-fade-in-scale" itemscope itemtype="https://schema.org/Product">
                         <img src="images/pao.jpg" alt="Variedade de pães artesanais frescos" class="product-image"
@@ -253,7 +253,7 @@
             <div class="pricing-content animate-fade-in-scale">
                 <!-- Painel Pães -->
                 <div id="paes-panel" class="pricing-panel active" role="tabpanel" aria-labelledby="paes-tab">
-                    <div class="pricing-grid">
+                    <div class="pricing-grid" id="paes-grid-container">
                         <div class="pricing-item" itemscope itemtype="https://schema.org/Product">
                             <div class="pricing-item-header">
                                 <h4 class="pricing-item-name" itemprop="name">Pão Francês</h4>
@@ -362,7 +362,7 @@
 
                 <!-- Painel Doces -->
                 <div id="doces-panel" class="pricing-panel" role="tabpanel" aria-labelledby="doces-tab">
-                    <div class="pricing-grid">
+                    <div class="pricing-grid" id="doces-grid-container">
                         <div class="pricing-item" itemscope itemtype="https://schema.org/Product">
                             <div class="pricing-item-header">
                                 <h4 class="pricing-item-name" itemprop="name">Bolo de Chocolate</h4>
@@ -471,7 +471,7 @@
 
                 <!-- Painel Salgados -->
                 <div id="salgados-panel" class="pricing-panel" role="tabpanel" aria-labelledby="salgados-tab">
-                    <div class="pricing-grid">
+                    <div class="pricing-grid" id="salgados-grid-container">
                         <div class="pricing-item" itemscope itemtype="https://schema.org/Product">
                             <div class="pricing-item-header">
                                 <h4 class="pricing-item-name" itemprop="name">Coxinha</h4>
@@ -580,7 +580,7 @@
 
                 <!-- Painel Bebidas -->
                 <div id="bebidas-panel" class="pricing-panel" role="tabpanel" aria-labelledby="bebidas-tab">
-                    <div class="pricing-grid">
+                    <div class="pricing-grid" id="bebidas-grid-container">
                         <div class="pricing-item" itemscope itemtype="https://schema.org/Product">
                             <div class="pricing-item-header">
                                 <h4 class="pricing-item-name" itemprop="name">Café Expresso</h4>
@@ -921,7 +921,8 @@
     <!-- Loading indicator -->
     <div class="page-loading" id="page-loading" aria-hidden="true"></div>
 
-    <!-- Link para o arquivo JavaScript harmonizado -->
+    <!-- Dados e arquivo JavaScript harmonizado -->
+    <script src="js/data.js"></script>
     <script src="js/main-harmonizado.js"></script>
 
     <!-- Dados estruturados JSON-LD para SEO -->
